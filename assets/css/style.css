@@ -57,9 +57,10 @@
     background-image: url('../img/icons/magnifying_glass_off.svg');
 }
 
-#searchButton:hover {
+
+/* #searchButton:hover {
     background-color: #184C78;
-}
+} */
 
 .mapboxgl-popup-content {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
@@ -108,16 +109,16 @@
     font-size: 14px;
     font-weight: 400;
     height: 40px !important;
-    /* width: 210px !important; */
 }
 
-.easy-autocomplete input:focus,
+
+/* .easy-autocomplete input:focus,
 .easy-autocomplete textarea:focus {
     border: 1px solid #184C78 !important;
     box-shadow: 0 0 3px #184C78 !important;
     -moz-box-shadow: 0 0 3px #184C78 !important;
     -webkit-box-shadow: 0 0 3px #184C78 !important;
-}
+} */
 
 input:focus,
 textarea:focus,

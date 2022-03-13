@@ -1264,12 +1264,12 @@ function switchPOI(value) {
     }
     var htmlPOI = document.getElementById(value);
     var htmlPOIParent = htmlPOI.parentNode;
-    var arrow = document.createElement('img');
-    arrow.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Pfeil.png');
-    arrow.setAttribute('id', 'arrow');
-    arrow.style.width = '20px';
-    arrow.style.position = 'absolute';
-    htmlPOIParent.insertBefore(arrow, htmlPOI);
+    // var arrow = document.createElement('img');
+    // arrow.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Pfeil.png');
+    // arrow.setAttribute('id', 'arrow');
+    // arrow.style.width = '20px';
+    // arrow.style.position = 'absolute';
+    // htmlPOIParent.insertBefore(arrow, htmlPOI);
     if (popup) {
         popup.remove();
     }
