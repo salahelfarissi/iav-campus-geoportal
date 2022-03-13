@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAV Campus Geoportal</title>
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/metismenu/dist/metisMenu.min.css">
+
+    <link rel="stylesheet" href="./assets/css/mm-vertical.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/342a65accd.js"></script>
+
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">IAV Hassan II Campus Geoportal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/salahelfarissi/iav-campus-geoportal" target="_blank">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+
+        <section class="jumbotron text-center">
+            <h1 class="jumbotron-heading">Interactive Geoportal</h1>
+            <p class="lead text-muted">Enjoy your stay at IAV Hassan II campus 😁</p>
+        </section>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <nav class="sidebar-nav border">
+                    <ul id="metismenu">
+                        <li>
+                            <a class="has-arrow" href="#" aria-expanded="false">Départements
+                                & Amphithéâtres</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Départements</a>
+                                </li>
+                                <li>
+                                    <a href="#">Amphithéatres</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9 mb3">
+                <div class="alert alert-primary d-flex align-items-center" role="alert">
+                    <div>
+                        Please report to us any missing building 👋🏼
+                    </div>
+                </div>
+
+                <div id="map" style='width: 100%; height: 300px;'></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/metismenu/dist/metisMenu.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#metismenu').metisMenu();
+        });
+
+        // Adding mapbox basemap
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic2FsYWhlbGZhcmlzc2kiLCJhIjoiY2ttb3p1Yzk3Mjl2bzJ2bno3OGlqcjJ2bCJ9.pErPZNgS_t5jzHlsp_XyRQ';
+
+        // Reference Zoom
+        let refZoom = 15.5;
+
+        // Creating a map object
+        const map = new mapboxgl.Map({
+            style: 'mapbox://styles/salahelfarissi/ckzzjh6kl000k14mf1l6b88wk',
+            center: [-6.8641885, 33.9780371],
+            zoom: refZoom,
+            pitch: 0,
+            bearing: 38,
+            container: 'map',
+            antialias: true,
+            attributionControl: false
+        });
+    </script>
+</body>
+
+</html>
