@@ -1317,12 +1317,12 @@ let zoomiav = document.getElementById('iav')
 let zoomApesa = document.getElementById('apesa')
 let zoomClinic = document.getElementById('clinic')
 
-zoomiav.style.backgroundColor = '#184c78';
-zoomClinic.style.backgroundColor = '#D9D9D9';
-zoomApesa.style.backgroundColor = '#D9D9D9';
+// zoomiav.style.backgroundColor = '#184c78';
+// zoomClinic.style.backgroundColor = '#D9D9D9';
+// zoomApesa.style.backgroundColor = '#D9D9D9';
 
-zoomClinic.style.color = '#184c78';
-zoomApesa.style.color = '#184c78';
+// zoomClinic.style.color = '#184c78';
+// zoomApesa.style.color = '#184c78';
 
 zoomiav.addEventListener('click', function() {
     // map.setMaxBounds(mapExtent);
@@ -1331,13 +1331,13 @@ zoomiav.addEventListener('click', function() {
         center: [-6.8641885, 33.9780371],
         essential: true
     });
-    zoomiav.style.backgroundColor = '#184c78';
-    zoomClinic.style.backgroundColor = '#D9D9D9';
-    zoomApesa.style.backgroundColor = '#D9D9D9';
+    // zoomiav.style.backgroundColor = '#184c78';
+    // zoomClinic.style.backgroundColor = '#D9D9D9';
+    // zoomApesa.style.backgroundColor = '#D9D9D9';
 
-    zoomiav.style.color = 'white';
-    zoomClinic.style.color = '#184c78';
-    zoomApesa.style.color = '#184c78';
+    // zoomiav.style.color = 'white';
+    // zoomClinic.style.color = '#184c78';
+    // zoomApesa.style.color = '#184c78';
 });
 
 zoomApesa.addEventListener('click', function() {
@@ -1347,13 +1347,13 @@ zoomApesa.addEventListener('click', function() {
         center: [-6.8685626, 33.9724241],
         essential: true
     });
-    zoomApesa.style.backgroundColor = '#184c78';
-    zoomClinic.style.backgroundColor = '#D9D9D9';
-    zoomiav.style.backgroundColor = '#D9D9D9';
+    // zoomApesa.style.backgroundColor = '#184c78';
+    // zoomClinic.style.backgroundColor = '#D9D9D9';
+    // zoomiav.style.backgroundColor = '#D9D9D9';
 
-    zoomApesa.style.color = 'white';
-    zoomiav.style.color = '#184c78';
-    zoomClinic.style.color = '#184c78';
+    // zoomApesa.style.color = 'white';
+    // zoomiav.style.color = '#184c78';
+    // zoomClinic.style.color = '#184c78';
 
 });
 
@@ -1364,13 +1364,13 @@ zoomClinic.addEventListener('click', function() {
         center: [-6.8686041, 33.9742859],
         essential: true
     });
-    zoomClinic.style.backgroundColor = '#184c78';
-    zoomiav.style.backgroundColor = '#D9D9D9';
-    zoomApesa.style.backgroundColor = '#D9D9D9';
+    // zoomClinic.style.backgroundColor = '#184c78';
+    // zoomiav.style.backgroundColor = '#D9D9D9';
+    // zoomApesa.style.backgroundColor = '#D9D9D9';
 
-    zoomClinic.style.color = 'white';
-    zoomiav.style.color = '#184c78';
-    zoomApesa.style.color = '#184c78';
+    // zoomClinic.style.color = 'white';
+    // zoomiav.style.color = '#184c78';
+    // zoomApesa.style.color = '#184c78';
 
 });
 
@@ -1809,9 +1809,9 @@ function getSearchedItem(item) {
 // 2D & 3D buttons behavior
 DDButton = document.getElementById('DDButton');
 DDDButton = document.getElementById('DDDButton');
-DDButton.style.backgroundColor = '#184c78';
-DDDButton.style.backgroundColor = '#dddddd';
-DDDButton.style.color = '#184c78';
+// DDButton.style.backgroundColor = '#184c78';
+// DDDButton.style.backgroundColor = '#dddddd';
+// DDDButton.style.color = '#184c78';
 DDButton.style.fontSize = '12px';
 DDDButton.style.fontSize = '12px';
 
@@ -1835,14 +1835,14 @@ DDDButton.addEventListener('click', function() {
             zoom: switchDimZoom
         });
 
-        DDDButton.style.color = 'white';
-        DDDButton.style.backgroundColor = '#184c78';
+        // DDDButton.style.color = 'white';
+        // DDDButton.style.backgroundColor = '#184c78';
 
         DDD = true;
         map.dragRotate.enable();
 
-        DDButton.style.backgroundColor = '#dddddd';
-        DDButton.style.color = '#184c78';
+        // DDButton.style.backgroundColor = '#dddddd';
+        // DDButton.style.color = '#184c78';
     }
 })
 
@@ -1865,13 +1865,13 @@ DDButton.addEventListener('click', function() {
         });
         map.dragRotate.disable();
 
-        DDButton.style.color = 'white';
-        DDButton.style.backgroundColor = '#184c78';
+        // DDButton.style.color = 'white';
+        // DDButton.style.backgroundColor = '#184c78';
 
         DDD = false;
 
-        DDDButton.style.backgroundColor = '#dddddd';
-        DDDButton.style.color = '#184c78';
+        // DDDButton.style.backgroundColor = '#dddddd';
+        // DDDButton.style.color = '#184c78';
     }
 })
 

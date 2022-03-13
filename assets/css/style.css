@@ -31,9 +31,9 @@
 }
 
 #DDD button {
-    background-color: grey;
+    /* background-color: grey; */
     border: none;
-    padding: 5px 10px;
+    padding: 2px 8px;
     opacity: 0.85;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
@@ -41,7 +41,7 @@
 }
 
 #searchButton.btn-primary {
-    background-color: #184C78;
+    /* background-color: #184C78; */
     color: #fff;
     height: 40px;
     width: 40px;
