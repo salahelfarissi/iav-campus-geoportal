@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IAV Campus Geoportal</title>
 
+    <!-- Search Plugin CSS file -->
+    <link href="./assets/css/easy/easy-autocomplete.min.css" rel="stylesheet">
+
+    <!-- Search Plugin Additional CSS Themes file - not required -->
+    <link href="./assets/css/easy/easy-autocomplete.themes.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/metismenu/dist/metisMenu.min.css">
 
@@ -23,9 +29,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
 
-    <style>
 
-    </style>
+
+
 </head>
 
 <body>
@@ -48,10 +54,6 @@
     </header>
     <div class="container">
 
-        <section class="jumbotron text-center">
-            <h1 class="jumbotron-heading">Interactive Geoportal</h1>
-            <p class="lead text-muted">Enjoy your stay at IAV Hassan II campus 😁</p>
-        </section>
         <div class="row">
             <div class="col-md-3 mb-3">
                 <nav class="sidebar-nav">
@@ -61,8 +63,7 @@
                             <div class="input-group">
                                 <input id="searchBuild" type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                    <button id="searchButton" class="btn btn-secondary" type="button">
-                                        <i class="fa fa-search"></i>
+                                    <button class="btn btn-primary" id="searchButton" type="button">
                                     </button>
                                 </span>
                             </div>
@@ -86,12 +87,6 @@
                 </nav>
             </div>
             <div class="col-md-9 mb3">
-                <div class="alert alert-primary d-flex align-items-center" role="alert">
-                    <div>
-                        Please report to us any missing building 👋🏼
-                    </div>
-                </div>
-
                 <div id="map">
                     <div class="btn-group" id="DDD"></div>
                     <div class="btn-group" id="switchView">
@@ -108,6 +103,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/metismenu/dist/metisMenu.min.js"></script>
+    <script src="./assets/js/jquery.easy-autocomplete.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

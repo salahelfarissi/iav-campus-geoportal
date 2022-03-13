@@ -39,3 +39,89 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
+
+#searchButton.btn-primary {
+    background-color: #184C78;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    background-image: url('../img/icons/magnifying_glass.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding: 0;
+    border: none;
+}
+
+#searchButton.btn-primary.off {
+    background-image: url('../img/icons/magnifying_glass_off.svg');
+}
+
+#searchButton:hover {
+    background-color: #184C78;
+}
+
+.mapboxgl-popup-content {
+    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    padding: 0;
+    min-width: 150px;
+    box-shadow: 2px 1px 1px #d42e2e;
+    max-width: 150px;
+}
+
+.mapboxgl-popup-content img {
+    height: 150px;
+    width: 150px;
+}
+
+.mapboxgl-popup-content h1 {
+    background: #d42e2e;
+    color: #fff;
+    margin: 0;
+    display: block;
+    border-radius: 3px 3px 0 0;
+    padding: 10px 10px 10px 10px;
+    font-weight: 400;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.mapboxgl-popup-content p {
+    font-size: 12px;
+    margin: 5px 5px 2px;
+    line-height: normal;
+}
+
+.mapboxgl-popup-content a {
+    font-size: 12px;
+    margin: 5px;
+    color: #387ABD;
+}
+
+.easy-autocomplete input {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #184C78;
+    float: none;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px !important;
+    /* width: 210px !important; */
+}
+
+.easy-autocomplete input:focus,
+.easy-autocomplete textarea:focus {
+    border: 1px solid #184C78 !important;
+    box-shadow: 0 0 3px #184C78 !important;
+    -moz-box-shadow: 0 0 3px #184C78 !important;
+    -webkit-box-shadow: 0 0 3px #184C78 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
+}
