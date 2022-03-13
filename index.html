@@ -20,6 +20,8 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 
+    <link rel="stylesheet" href="./assets/css/style.css">
+
 
     <style>
 
@@ -54,15 +56,29 @@
             <div class="col-md-3 mb-3">
                 <nav class="sidebar-nav border">
                     <ul id="metismenu">
+
+                        <li>
+                            <div class="input-group">
+                                <input id="searchBuild" type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button id="searchButton" class="btn btn-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+
                         <li>
                             <a class="has-arrow" href="#" aria-expanded="false">Départements
                                 & Amphithéâtres</a>
                             <ul>
                                 <li>
-                                    <a href="#">Départements</a>
+                                    <a id="department" href="#">Départements</a>
+                                    <ul id="insertDepartment"></ul>
                                 </li>
                                 <li>
-                                    <a href="#">Amphithéatres</a>
+                                    <a id="amphitheater" href="#">Amphithéatres</a>
+                                    <ul id="insertDepartment"></ul>
                                 </li>
                             </ul>
                         </li>
@@ -76,7 +92,7 @@
                     </div>
                 </div>
 
-                <div id="map" style='width: 100%; height: 300px;'></div>
+                <div id="map"></div>
             </div>
         </div>
     </div>
@@ -85,29 +101,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/metismenu/dist/metisMenu.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#metismenu').metisMenu();
-        });
-
-        // Adding mapbox basemap
-        mapboxgl.accessToken = 'pk.eyJ1Ijoic2FsYWhlbGZhcmlzc2kiLCJhIjoiY2ttb3p1Yzk3Mjl2bzJ2bno3OGlqcjJ2bCJ9.pErPZNgS_t5jzHlsp_XyRQ';
-
-        // Reference Zoom
-        let refZoom = 15.5;
-
-        // Creating a map object
-        const map = new mapboxgl.Map({
-            style: 'mapbox://styles/salahelfarissi/ckzzjh6kl000k14mf1l6b88wk',
-            center: [-6.8641885, 33.9780371],
-            zoom: refZoom,
-            pitch: 0,
-            bearing: 38,
-            container: 'map',
-            antialias: true,
-            attributionControl: false
-        });
-    </script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
