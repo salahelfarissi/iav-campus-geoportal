@@ -125,3 +125,46 @@ select:focus {
     outline-offset: 0px !important;
     outline: none !important;
 }
+
+.collapse .nav-second-level li.active .square.active {
+    background-image: url('https://cdn.jsdelivr.net/gh/salahelfarissi/interactive-iav-campus-map@master/assets/img/popup/active.png');
+    background-color: #fff;
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+    border-bottom: 0 !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.sidebar .nav-second-level li a {
+    padding-left: 37px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.nav li a .section-name {
+    padding-left: 2px;
+    font-size: 10pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.nav li a i {
+    height: 20px;
+    top: auto;
+    position: absolute;
+}
+
+.nav li a {
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}

@@ -28,6 +28,11 @@
 
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script defer src="./assets/js/script.js"></script>
+
+
 
 
 
@@ -70,12 +75,12 @@
                         </li>
 
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Départements
-                                & Amphithéâtres</a>
-                            <ul>
+                            <a class="has-arrow" href="#" aria-expanded="false"><span class="section-name">Départements
+                                    & Amphithéâtres</span></a>
+                            <ul class="nav nav-second-level">
                                 <li>
                                     <a id="department" href="#">Départements</a>
-                                    <ul id="insertDepartment"></ul>
+                                    <ul class="nav nav-third-level" id="insertDepartment"></ul>
                                 </li>
                                 <li>
                                     <a id="amphitheater" href="#">Amphithéatres</a>
@@ -101,10 +106,8 @@
 
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/metismenu/dist/metisMenu.min.js"></script>
     <script src="./assets/js/jquery.easy-autocomplete.min.js"></script>
-    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

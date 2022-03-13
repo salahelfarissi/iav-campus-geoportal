@@ -165,7 +165,7 @@ const pin = './assets/img/icons/dep-icon.png';
 let departmentsCount = 0;
 let departmentsList = [];
 let departmentsLink = document.getElementById('department');
-let insertDepartments = document.getElementById('insertDepartments');
+let insertDepartments = document.getElementById('insertDepartment');
 headingLabel.push('department');
 
 // Amphithéâtres
@@ -1226,6 +1226,7 @@ function createHTMLList(category, namesList, targetedElement, overlayCount) {
         for (i = 0; i < namesList.length; i++) {
             currentName = namesList[i].split("'").join('!');
             elList = document.createElement('li');
+            console.log(elList);
             targetedElement.appendChild(elList);
             elLink = document.createElement('a');
             elLink.innerHTML = namesList[i];
