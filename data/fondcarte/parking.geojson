@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "parking",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 201, "Nom": null, "Categorie": "Parking", "Groupe": "Mobilités et accessibilité", "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "R", "Niveau": null, "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": "354 places", "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.701828253323903, 48.118188928987351 ] } },
+{ "type": "Feature", "properties": { "id": 202, "Nom": null, "Categorie": "Parking", "Groupe": "Mobilités et accessibilité", "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "H", "Niveau": null, "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": "185 places", "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.700384373240928, 48.120385003097965 ] } },
+{ "type": "Feature", "properties": { "id": 206, "Nom": null, "Categorie": "Parking", "Groupe": "Mobilités et accessibilité", "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "N", "Niveau": null, "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": "143 places", "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.704048559489234, 48.118002508435922 ] } },
+{ "type": "Feature", "properties": { "id": 207, "Nom": null, "Categorie": "Parking", "Groupe": "Mobilités et accessibilité", "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "O", "Niveau": null, "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": "7 places", "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.704355043469108, 48.120639614313141 ] } },
+{ "type": "Feature", "properties": { "id": 210, "Nom": null, "Categorie": "Parking", "Groupe": "Mobilités et accessibilité", "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "EHSP", "Niveau": null, "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.702418977177024, 48.117126310199161 ] } }
+]
+}

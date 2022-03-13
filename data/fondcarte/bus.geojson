@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "bus",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "2", "Nom": "", "Categorie": "Bus", "Groupe": null, "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "", "Niveau": "", "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.704485912585347, 48.119315695055647 ] } },
+{ "type": "Feature", "properties": { "id": "1", "Nom": "", "Categorie": "Bus", "Groupe": null, "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "", "Niveau": "", "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.703712514120939, 48.121923153363774 ] } },
+{ "type": "Feature", "properties": { "id": "3", "Nom": null, "Categorie": "Bus", "Groupe": null, "Etiquette": null, "Campus": "Villejean", "Image": "", "Batiment": "", "Niveau": "", "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.703124154985644, 48.121189990662323 ] } },
+{ "type": "Feature", "properties": { "id": "4", "Nom": null, "Categorie": "Bus", "Groupe": null, "Etiquette": null, "Campus": "Villejean", "Image": "", "Batiment": "", "Niveau": "", "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.703955732590149, 48.121758436180976 ] } }
+]
+}

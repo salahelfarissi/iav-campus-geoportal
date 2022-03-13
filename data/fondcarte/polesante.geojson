@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "polesante",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "Nom": "Pole Santé", "Categorie": "Sante", "Groupe": null, "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "B", "Niveau": "niveau : 1", "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.703516650452097, 48.118856491665184 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nom": "SIMMPS", "Categorie": "Sante", "Groupe": null, "Etiquette": null, "Campus": "Villejean", "Image": null, "Batiment": "R", "Niveau": "niveau : 2", "Mail": null, "Tel": null, "Lien": null, "Horaire": null, "Capacite": null, "Info": null, "PMR": null }, "geometry": { "type": "Point", "coordinates": [ -1.701875242434563, 48.118973254106074 ] } }
+]
+}
