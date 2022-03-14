@@ -40,7 +40,6 @@ function getQueryStringValue(key) {
 
 // Getting query string value from URL
 const overlay = getQueryStringValue('layer').toString();
-console.log(overlay);
 const pointOverlay = getQueryStringValue('point').toString();
 
 // Adjusting element dimensions based on device
@@ -164,9 +163,9 @@ const pin = './assets/img/icons/dep-icon.png';
 
 let departmentsCount = 0;
 let departmentsList = [];
-let departmentsLink = document.getElementById('department');
+let departmentsLink = document.getElementById('departments');
 let insertDepartments = document.getElementById('insertDepartment');
-headingLabel.push('department');
+headingLabel.push('departments');
 
 // Amphithéâtres
 
@@ -259,7 +258,6 @@ var listLayers = [paulLink, salleConfLink, grandAmphiLink, amphiVetoLink, bdgLin
 
 // Other variables
 var Layers = [];
-console.log(Layers);
 var popup = null;
 var popupList = null;
 
@@ -870,10 +868,9 @@ function addCategoryOverlay(htmlLink, layerName, ordre, type, colorOrUrl, iconSi
                         });
                     });
                 Layers.push(layerName);
-                console.log(subLabel);
-                console.log(headingLabel);
 
                 if (subLabel) {
+
                     function labelOverlay() {
                         let overlayLabel = map.addLayer({
                             id: labelLayerName,
@@ -1226,7 +1223,6 @@ function createHTMLList(category, namesList, targetedElement, overlayCount) {
         for (i = 0; i < namesList.length; i++) {
             currentName = namesList[i].split("'").join('!');
             elList = document.createElement('li');
-            console.log(elList);
             targetedElement.appendChild(elList);
             elLink = document.createElement('a');
             elLink.innerHTML = namesList[i];
@@ -1478,7 +1474,7 @@ map.on('load', function() {
         getSearchedItem(pointOverlay);
     }
 
-    if (overlay == 'department') {
+    if (overlay == 'departments') {
         addCategoryOverlay(departmentsLink, 'departments', departmentsLinkState, 'marker', pin, markerSize, departmentsCount);
         if (departmentsCount == 0) {
             createHTMLList('departments', departmentsList, insertDepartments, departmentsCount);
@@ -1503,112 +1499,112 @@ map.on('load', function() {
         }
     }
 
-    if (overlay === 'paul_pascon') {
-        addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
-        paulCount++;
-    }
-    paulLink.onclick = function(e) {
-        addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
-        paulCount++;
-    }
+    // if (overlay === 'paul_pascon') {
+    //     addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
+    //     paulCount++;
+    // }
+    // paulLink.onclick = function(e) {
+    //     addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
+    //     paulCount++;
+    // }
 
-    if (overlay === 'salle_conf') {
-        addCategoryOverlay(salleConfLink, 'salle_conf', 'layer', 'marker', pin, markerSize, confCount);
-        confCount++;
-    }
-    salleConfLink.onclick = function(e) {
-        addCategoryOverlay(salleConfLink, 'salle_conf', 'layer', 'marker', pin, markerSize, confCount);
-        confCount++;
-    }
+    // if (overlay === 'salle_conf') {
+    //     addCategoryOverlay(salleConfLink, 'salle_conf', 'layer', 'marker', pin, markerSize, confCount);
+    //     confCount++;
+    // }
+    // salleConfLink.onclick = function(e) {
+    //     addCategoryOverlay(salleConfLink, 'salle_conf', 'layer', 'marker', pin, markerSize, confCount);
+    //     confCount++;
+    // }
 
-    if (overlay === 'amphi_agro') {
-        addCategoryOverlay(grandAmphiLink, 'amphi_agro', 'layer', 'marker', pin, markerSize, grandAmphiCount);
-        grandAmphiCount++;
-    }
-    grandAmphiLink.onclick = function(e) {
-        addCategoryOverlay(grandAmphiLink, 'amphi_agro', 'layer', 'marker', pin, markerSize, grandAmphiCount);
-        grandAmphiCount++;
-    }
+    // if (overlay === 'amphi_agro') {
+    //     addCategoryOverlay(grandAmphiLink, 'amphi_agro', 'layer', 'marker', pin, markerSize, grandAmphiCount);
+    //     grandAmphiCount++;
+    // }
+    // grandAmphiLink.onclick = function(e) {
+    //     addCategoryOverlay(grandAmphiLink, 'amphi_agro', 'layer', 'marker', pin, markerSize, grandAmphiCount);
+    //     grandAmphiCount++;
+    // }
 
-    if (overlay === 'amphi_veto') {
-        addCategoryOverlay(amphiVetoLink, 'amphi_veto', 'layer', 'marker', pin, markerSize, amphiVetoCount);
-        amphiVetoCount++;
-    }
-    amphiVetoLink.onclick = function(e) {
-        addCategoryOverlay(amphiVetoLink, 'amphi_veto', 'layer', 'marker', pin, markerSize, amphiVetoCount);
-        amphiVetoCount++;
-    }
+    // if (overlay === 'amphi_veto') {
+    //     addCategoryOverlay(amphiVetoLink, 'amphi_veto', 'layer', 'marker', pin, markerSize, amphiVetoCount);
+    //     amphiVetoCount++;
+    // }
+    // amphiVetoLink.onclick = function(e) {
+    //     addCategoryOverlay(amphiVetoLink, 'amphi_veto', 'layer', 'marker', pin, markerSize, amphiVetoCount);
+    //     amphiVetoCount++;
+    // }
 
-    // Administration
-    if (overlay === 'director') {
-        addCategoryOverlay(bdgLink, 'director', 'layer', 'marker', pin, markerSize, bdgCount);
-        bdgCount++;
-    }
-    bdgLink.onclick = function(e) {
-        addCategoryOverlay(bdgLink, 'director', 'layer', 'marker', pin, markerSize, bdgCount);
-        bdgCount++;
-    }
+    // // Administration
+    // if (overlay === 'director') {
+    //     addCategoryOverlay(bdgLink, 'director', 'layer', 'marker', pin, markerSize, bdgCount);
+    //     bdgCount++;
+    // }
+    // bdgLink.onclick = function(e) {
+    //     addCategoryOverlay(bdgLink, 'director', 'layer', 'marker', pin, markerSize, bdgCount);
+    //     bdgCount++;
+    // }
 
-    if (overlay === 'teaching') {
-        addCategoryOverlay(bdpLink, 'teaching', 'layer', 'marker', pin, markerSize, bdpCount);
-        bdpCount++;
-    }
-    bdpLink.onclick = function(e) {
-        addCategoryOverlay(bdpLink, 'teaching', 'layer', 'marker', pin, markerSize, bdpCount);
-        bdpCount++;
-    }
+    // if (overlay === 'teaching') {
+    //     addCategoryOverlay(bdpLink, 'teaching', 'layer', 'marker', pin, markerSize, bdpCount);
+    //     bdpCount++;
+    // }
+    // bdpLink.onclick = function(e) {
+    //     addCategoryOverlay(bdpLink, 'teaching', 'layer', 'marker', pin, markerSize, bdpCount);
+    //     bdpCount++;
+    // }
 
-    if (overlay === 'bureau_ordre') {
-        addCategoryOverlay(boLink, 'bureau_ordre', 'layer', 'marker', pin, markerSize, boCount);
-        boCount++;
-    }
-    boLink.onclick = function(e) {
-        addCategoryOverlay(boLink, 'bureau_ordre', 'layer', 'marker', pin, markerSize, boCount);
-        boCount++;
-    }
+    // if (overlay === 'bureau_ordre') {
+    //     addCategoryOverlay(boLink, 'bureau_ordre', 'layer', 'marker', pin, markerSize, boCount);
+    //     boCount++;
+    // }
+    // boLink.onclick = function(e) {
+    //     addCategoryOverlay(boLink, 'bureau_ordre', 'layer', 'marker', pin, markerSize, boCount);
+    //     boCount++;
+    // }
 
-    if (overlay === 'logistic') {
-        addCategoryOverlay(blLink, 'logistic', 'layer', 'marker', pin, markerSize, blCount);
-        blCount++;
-    }
-    blLink.onclick = function(e) {
-        addCategoryOverlay(blLink, 'logistic', 'layer', 'marker', pin, markerSize, blCount);
-        blCount++;
-    }
+    // if (overlay === 'logistic') {
+    //     addCategoryOverlay(blLink, 'logistic', 'layer', 'marker', pin, markerSize, blCount);
+    //     blCount++;
+    // }
+    // blLink.onclick = function(e) {
+    //     addCategoryOverlay(blLink, 'logistic', 'layer', 'marker', pin, markerSize, blCount);
+    //     blCount++;
+    // }
 
-    if (overlay === 'resCS') {
-        addCategoryOverlay(resCSLink, 'resCS', 'layer', 'marker', pin, markerSize, resCSCount);
-        resCSCount++;
-    }
-    resCSLink.onclick = function(e) {
-        addCategoryOverlay(resCSLink, 'resCS', 'layer', 'marker', pin, markerSize, resCSCount);
-        resCSCount++;
-    }
+    // if (overlay === 'resCS') {
+    //     addCategoryOverlay(resCSLink, 'resCS', 'layer', 'marker', pin, markerSize, resCSCount);
+    //     resCSCount++;
+    // }
+    // resCSLink.onclick = function(e) {
+    //     addCategoryOverlay(resCSLink, 'resCS', 'layer', 'marker', pin, markerSize, resCSCount);
+    //     resCSCount++;
+    // }
 
-    if (overlay === 'meetingRoom') {
-        addCategoryOverlay(salleRLink, 'meetingRoom', 'layer', 'marker', pin, markerSize, salleRCount);
-        salleRCount++;
-    }
-    salleRLink.onclick = function(e) {
-        addCategoryOverlay(salleRLink, 'meetingRoom', 'layer', 'marker', pin, markerSize, salleRCount);
-        salleRCount++;
-    }
+    // if (overlay === 'meetingRoom') {
+    //     addCategoryOverlay(salleRLink, 'meetingRoom', 'layer', 'marker', pin, markerSize, salleRCount);
+    //     salleRCount++;
+    // }
+    // salleRLink.onclick = function(e) {
+    //     addCategoryOverlay(salleRLink, 'meetingRoom', 'layer', 'marker', pin, markerSize, salleRCount);
+    //     salleRCount++;
+    // }
 
-    if (overlay === 'phdRoom') {
-        addCategoryOverlay(eDocLink, 'phdRoom', 'layer', 'marker', pin, markerSize, eDocCount);
-        eDocCount++;
-    }
-    eDocLink.onclick = function(e) {
-        addCategoryOverlay(eDocLink, 'phdRoom', 'layer', 'marker', pin, markerSize, eDocCount);
-        eDocCount++;
-    }
+    // if (overlay === 'phdRoom') {
+    //     addCategoryOverlay(eDocLink, 'phdRoom', 'layer', 'marker', pin, markerSize, eDocCount);
+    //     eDocCount++;
+    // }
+    // eDocLink.onclick = function(e) {
+    //     addCategoryOverlay(eDocLink, 'phdRoom', 'layer', 'marker', pin, markerSize, eDocCount);
+    //     eDocCount++;
+    // }
 
-    linearLink.onclick = function(e) {
-        addCategoryOverlay(linearLink, 'Route Principale', 'layer', 'line', linearColor, lineSize, linearCount);
-        linearCount++;
-        // addCategoryOverlay(linearLink, 'Accès PMR', 'layer', 'point', accesPMRColor, accesPMRIconSize, accesPMRCount);
-        // accesPMRCount += 1;
-    }
+    // linearLink.onclick = function(e) {
+    //     addCategoryOverlay(linearLink, 'Route Principale', 'layer', 'line', linearColor, lineSize, linearCount);
+    //     linearCount++;
+    //     // addCategoryOverlay(linearLink, 'Accès PMR', 'layer', 'point', accesPMRColor, accesPMRIconSize, accesPMRCount);
+    //     // accesPMRCount += 1;
+    // }
 
 
 });
@@ -1894,7 +1890,6 @@ searchButton.addEventListener('click', function(e) {
         getSearchedItem();
     } else {
         Layers = Layers.filter(item => item != searchLayerId);
-        console.log(searchLayerId);
         map.removeLayer(searchLayerId);
         searchPopup.remove();
         searchBarCrossPresence = null;
@@ -1912,10 +1907,12 @@ searchButton.addEventListener('keypress', function(e) {
 })
 
 $("#btnRemovefilters").on("click", function() {
-    $('ul.nav li:not(.sidebar-search,.sidebar-remove-filters), ul.nav li:not(.sidebar-search,.sidebar-remove-filters) a ').each(function(i) {
+    $('ul#metismenu li:not(.sidebar-search,.sidebar-remove-filters), ul#metismenu li:not(.sidebar-search,.sidebar-remove-filters) a ').each(function(i) {
         if ($(this).attr('id')) {
             var removelayer = $(this).attr('id');
+            console.log(removelayer);
             if (map.getLayer(removelayer)) {
+
                 var visibility = map.getLayoutProperty(removelayer, 'visibility');
                 if (visibility != "none") {
                     if (Layers.includes(removelayer)) {

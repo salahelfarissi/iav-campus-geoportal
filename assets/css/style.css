@@ -113,11 +113,6 @@ select:focus {
     outline: none !important;
 }
 
-.collapse .nav-second-level li.active .square.active {
-    background-image: url('https://cdn.jsdelivr.net/gh/salahelfarissi/interactive-iav-campus-map@master/assets/img/popup/active.png');
-    background-color: #fff;
-}
-
 .fa-solid {
     font-size: 20px;
     float: left;
@@ -129,4 +124,40 @@ select:focus {
     left: 0px;
     position: absolute;
     margin-right: 10px;
+}
+
+.square {
+    background-image: url('../img/popup/empty.png');
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 16px center;
+}
+
+.square.active {
+    background-image: url('../img/popup/filled.png');
+    background-color: #f4f5f5;
+}
+
+.nav-second-level li.active .square.active {
+    background-image: url('../img/popup/filled.png');
+    background-color: #fff;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: 16px center;
+}
+
+li img {
+    height: 15px;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    z-index: 1
+}
+
+a img {
+    height: 15px;
+    position: left;
+    left: 5px;
+    top: 7px;
+    z-index: 1
 }

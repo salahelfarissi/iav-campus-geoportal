@@ -64,7 +64,7 @@
                 <nav class="sidebar-nav">
                     <ul id="metismenu">
 
-                        <li>
+                        <li class="sidebar-search">
                             <div class="input-group">
                                 <input id="searchBuild" type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -80,14 +80,18 @@
                                     class="fa-solid fa-building"></i></a>
                             <ul class="nav-second-level">
                                 <li>
-                                    <a id="department" href="#">Départements</a>
+                                    <a id="departments" class="square" href="#">Départements</a>
                                     <ul class="nav-third-level" id="insertDepartment"></ul>
                                 </li>
                                 <li>
-                                    <a id="amphitheater" href="#">Amphithéatres</a>
-                                    <ul id="insertDepartment"></ul>
+                                    <a id="amphitheater" class="square" href="#">Amphithéatres</a>
+                                    <ul class="nav-third-level" id="insertDepartment"></ul>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="sidebar-remove-filters">
+                            <button id="btnRemovefilters" type="button" class="btn btn-primary btn-sm">Réinitialiser les
+                                filtres</button>
                         </li>
                     </ul>
                 </nav>
