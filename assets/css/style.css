@@ -149,16 +149,19 @@ li img {
     height: 15px;
     position: absolute;
     left: 15px;
-    top: 5px;
-    z-index: 1
+    top: 0px;
+    z-index: 1;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
 }
 
 a img {
     height: 15px;
     position: left;
     left: 5px;
-    top: 7px;
-    z-index: 1
+    top: 20px;
+    z-index: 1;
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
@@ -180,4 +183,16 @@ a img {
 
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
     border-top-color: #0d6efd;
+}
+
+.sidebar-nav .arrow {
+    float: right;
+}
+
+.sidebar-nav .fa.arrow:before {
+    content: "\f104";
+}
+
+.sidebar-nav .active>a>.fa.arrow:before {
+    content: "\f107";
 }

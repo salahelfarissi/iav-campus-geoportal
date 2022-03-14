@@ -1255,14 +1255,14 @@ function switchPOI(value) {
     roomOfInterest = null;
     salleRX = null;
     salleRY = null;
-    if (document.getElementById('arrow')) {
-        document.getElementById('arrow').remove();
-    }
-    var htmlPOI = document.getElementById(value);
-    var htmlPOIParent = htmlPOI.parentNode;
+    // if (document.getElementById('test')) {
+    //     document.getElementById('test').remove();
+    // }
+    // var htmlPOI = document.getElementById(value);
+    // var htmlPOIParent = htmlPOI.parentNode;
     // var arrow = document.createElement('img');
     // arrow.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Pfeil.png');
-    // arrow.setAttribute('id', 'arrow');
+    // arrow.setAttribute('id', 'test');
     // arrow.style.width = '20px';
     // arrow.style.position = 'absolute';
     // htmlPOIParent.insertBefore(arrow, htmlPOI);
