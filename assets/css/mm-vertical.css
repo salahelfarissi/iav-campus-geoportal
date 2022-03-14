@@ -34,6 +34,9 @@
     color: #212529;
     transition: all 0.3s ease-out;
     text-decoration: none;
+    font-size: small;
+    font-weight: 600;
+    padding-left: 28px;
 }
 
 .sidebar-nav .metismenu ul a {
@@ -42,6 +45,7 @@
 
 .sidebar-nav .metismenu ul ul a {
     padding: 0px 15px 0px 45px;
+    font-size: 11px;
 }
 
 .sidebar-nav .metismenu a:hover,
