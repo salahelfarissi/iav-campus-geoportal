@@ -169,6 +169,12 @@ headingLabel.push('departments');
 
 // Amphithéâtres
 
+let amphitheaterCount = 0;
+let amphitheaterList = [];
+let amphitheaterLink = document.getElementById('amphitheater');
+let insertAmphitheater = document.getElementById('insertAmphitheater');
+headingLabel.push('amphitheater');
+
 // Paul marker
 let paulCount = 0;
 const paulLink = document.getElementById('paul_pascon');
@@ -434,7 +440,7 @@ function getiav3D() {
             type: 'geojson',
             data: pointsIAV
         },
-        filter: ['==', 'grouping', 'departments'],
+        filter: ['==', 'label_state', 1],
         layout: {
             'text-field': '{label}',
             'text-anchor': 'center',
@@ -575,7 +581,7 @@ function getiav2D() {
             type: 'geojson',
             data: pointsIAV
         },
-        filter: ['==', 'grouping', 'departments'],
+        filter: ['==', 'label_state', 1],
         layout: {
             'text-field': '{label}',
             'text-anchor': 'center',
@@ -1411,6 +1417,10 @@ setInterval(function() {
     departmentsLinkState = departmentsLink.nextElementSibling.className;
 }, 500);
 
+setInterval(function() {
+    amphitheaterLinkState = amphitheaterLink.nextElementSibling.className;
+}, 500);
+
 map.on('load', function() {
 
     // ? Adding data sources
@@ -1490,14 +1500,40 @@ map.on('load', function() {
         for (let i = 0; i < Layers.length; i++) {
             if (Layers[i] = 'departments') {
                 map.flyTo({
-                    center: [-6.8660211, 33.9758029],
-                    zoom: 16,
+                    center: [-6.8656229, 33.9773255],
+                    // zoom: 16,
                     pitch: 0,
                     speed: 0.6
                 });
             }
         }
     }
+
+    if (overlay == 'amphitheater') {
+        addCategoryOverlay(amphitheaterLink, 'amphitheater', amphitheaterLinkState, 'marker', pin, markerSize, amphitheaterCount);
+        if (amphitheaterCount == 0) {
+            createHTMLList('amphitheater', amphitheaterList, insertAmphitheater, amphitheaterCount);
+        }
+        amphitheaterCount++;
+    }
+    amphitheaterLink.onclick = function(e) {
+        addCategoryOverlay(amphitheaterLink, 'amphitheater', amphitheaterLinkState, 'marker', pin, markerSize, amphitheaterCount);
+        if (amphitheaterCount == 0) {
+            createHTMLList('amphitheater', amphitheaterList, insertAmphitheater, amphitheaterCount);
+        }
+        amphitheaterCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'amphitheater') {
+                map.flyTo({
+                    center: [-6.8656229, 33.9773255],
+                    zoom: 15,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
+
 
     // if (overlay === 'paul_pascon') {
     //     addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
