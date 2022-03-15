@@ -175,62 +175,19 @@ let amphitheaterLink = document.getElementById('amphitheater');
 let insertAmphitheater = document.getElementById('insertAmphitheater');
 headingLabel.push('amphitheater');
 
-// Paul marker
-let paulCount = 0;
-const paulLink = document.getElementById('paul_pascon');
-headingLabel.push('paul_pascon');
-
-// Salle des conférences marker
-let confCount = 0;
-const salleConfLink = document.getElementById('salle_conf');
-headingLabel.push('salle_conf');
-
-// Grand Amphi Agro marker
-let grandAmphiCount = 0;
-const grandAmphiLink = document.getElementById('amphi_agro');
-headingLabel.push('amphi_agro');
-
-// Amphi Véto marker
-let amphiVetoCount = 0;
-const amphiVetoLink = document.getElementById('amphi_veto');
-headingLabel.push('amphi_veto');
-
 // Administration
 
-// BDG marker
-let bdgCount = 0;
-const bdgLink = document.getElementById('director');
-headingLabel.push('director');
+let adminCount = 0;
+let adminList = [];
+let adminLink = document.getElementById('admin');
+let insertAdmin = document.getElementById('insertAdmin');
+headingLabel.push('admin');
 
-// BDP marker
-let bdpCount = 0;
-const bdpLink = document.getElementById('teaching');
-headingLabel.push('teaching');
-
-// B Ordre marker
-let boCount = 0;
-const boLink = document.getElementById('bureau_ordre');
-headingLabel.push('bureau_ordre');
-
-// B Logistique marker
-let blCount = 0;
-const blLink = document.getElementById('logistic');
-headingLabel.push('logistic');
-
-// B Responsable Info marker
-let resCSCount = 0;
-const resCSLink = document.getElementById('resCS');
-headingLabel.push('resCS');
-
-// Salle des réuinions marker
-let salleRCount = 0;
-const salleRLink = document.getElementById('meetingRoom');
-headingLabel.push('meetingRoom');
-
-// Ecole doctorale marker
-let eDocCount = 0;
-const eDocLink = document.getElementById('phdRoom');
-headingLabel.push('phdRoom');
+let serviceCount = 0;
+let serviceList = [];
+let serviceLink = document.getElementById('service');
+let insertService = document.getElementById('insertService');
+headingLabel.push('service');
 
 // Services
 
@@ -260,7 +217,7 @@ var linearLink = document.getElementById('Cheminements accessibles');
 var linearColor = '#138fad';
 var linearType = 'line';
 
-var listLayers = [paulLink, salleConfLink, grandAmphiLink, amphiVetoLink, bdgLink, bdpLink, boLink, blLink, resCSLink, salleRLink, eDocLink, clinicLink, harkaLink, ecurieLink, equiLink];
+var listLayers = [departmentsLink, amphitheaterLink, adminLink, serviceLink, clinicLink, harkaLink, ecurieLink, equiLink];
 
 // Other variables
 var Layers = [];
@@ -1113,7 +1070,7 @@ function addCategoryOverlay(htmlLink, layerName, ordre, type, colorOrUrl, iconSi
 
             if (visibility === 'visible') {
                 if (listLayers.includes(htmlLink)) {
-                    if (ordre !== 'nav nav-third-level collapse') {
+                    if (ordre !== 'nav-third-level') {
                         hideLayer(layerName, htmlLink);
                     }
                 } else {
@@ -1421,6 +1378,14 @@ setInterval(function() {
     amphitheaterLinkState = amphitheaterLink.nextElementSibling.className;
 }, 500);
 
+setInterval(function() {
+    adminLinkState = adminLink.nextElementSibling.className;
+}, 500);
+
+setInterval(function() {
+    serviceLinkState = serviceLink.nextElementSibling.className;
+}, 500);
+
 map.on('load', function() {
 
     // ? Adding data sources
@@ -1501,7 +1466,7 @@ map.on('load', function() {
             if (Layers[i] = 'departments') {
                 map.flyTo({
                     center: [-6.8656229, 33.9773255],
-                    // zoom: 16,
+                    zoom: refZoom,
                     pitch: 0,
                     speed: 0.6
                 });
@@ -1534,115 +1499,55 @@ map.on('load', function() {
         }
     }
 
+    if (overlay == 'admin') {
+        addCategoryOverlay(adminLink, 'admin', adminLinkState, 'marker', pin, markerSize, adminCount);
+        // if (adminCount == 0) {
+        //     createHTMLList('admin', adminList, insertAdmin, adminCount);
+        // }
+        adminCount++;
+    }
+    adminLink.onclick = function(e) {
+        addCategoryOverlay(adminLink, 'admin', adminLinkState, 'marker', pin, markerSize, adminCount);
+        // if (adminCount == 0) {
+        //     createHTMLList('admin', adminList, insertAdmin, adminCount);
+        // }
+        adminCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'admin') {
+                map.flyTo({
+                    center: [-6.86360425, 33.98013032],
+                    zoom: 19,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
 
-    // if (overlay === 'paul_pascon') {
-    //     addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
-    //     paulCount++;
-    // }
-    // paulLink.onclick = function(e) {
-    //     addCategoryOverlay(paulLink, 'paul_pascon', 'layer', 'marker', pin, markerSize, paulCount);
-    //     paulCount++;
-    // }
-
-    // if (overlay === 'salle_conf') {
-    //     addCategoryOverlay(salleConfLink, 'salle_conf', 'layer', 'marker', pin, markerSize, confCount);
-    //     confCount++;
-    // }
-    // salleConfLink.onclick = function(e) {
-    //     addCategoryOverlay(salleConfLink, 'salle_conf', 'layer', 'marker', pin, markerSize, confCount);
-    //     confCount++;
-    // }
-
-    // if (overlay === 'amphi_agro') {
-    //     addCategoryOverlay(grandAmphiLink, 'amphi_agro', 'layer', 'marker', pin, markerSize, grandAmphiCount);
-    //     grandAmphiCount++;
-    // }
-    // grandAmphiLink.onclick = function(e) {
-    //     addCategoryOverlay(grandAmphiLink, 'amphi_agro', 'layer', 'marker', pin, markerSize, grandAmphiCount);
-    //     grandAmphiCount++;
-    // }
-
-    // if (overlay === 'amphi_veto') {
-    //     addCategoryOverlay(amphiVetoLink, 'amphi_veto', 'layer', 'marker', pin, markerSize, amphiVetoCount);
-    //     amphiVetoCount++;
-    // }
-    // amphiVetoLink.onclick = function(e) {
-    //     addCategoryOverlay(amphiVetoLink, 'amphi_veto', 'layer', 'marker', pin, markerSize, amphiVetoCount);
-    //     amphiVetoCount++;
-    // }
-
-    // // Administration
-    // if (overlay === 'director') {
-    //     addCategoryOverlay(bdgLink, 'director', 'layer', 'marker', pin, markerSize, bdgCount);
-    //     bdgCount++;
-    // }
-    // bdgLink.onclick = function(e) {
-    //     addCategoryOverlay(bdgLink, 'director', 'layer', 'marker', pin, markerSize, bdgCount);
-    //     bdgCount++;
-    // }
-
-    // if (overlay === 'teaching') {
-    //     addCategoryOverlay(bdpLink, 'teaching', 'layer', 'marker', pin, markerSize, bdpCount);
-    //     bdpCount++;
-    // }
-    // bdpLink.onclick = function(e) {
-    //     addCategoryOverlay(bdpLink, 'teaching', 'layer', 'marker', pin, markerSize, bdpCount);
-    //     bdpCount++;
-    // }
-
-    // if (overlay === 'bureau_ordre') {
-    //     addCategoryOverlay(boLink, 'bureau_ordre', 'layer', 'marker', pin, markerSize, boCount);
-    //     boCount++;
-    // }
-    // boLink.onclick = function(e) {
-    //     addCategoryOverlay(boLink, 'bureau_ordre', 'layer', 'marker', pin, markerSize, boCount);
-    //     boCount++;
-    // }
-
-    // if (overlay === 'logistic') {
-    //     addCategoryOverlay(blLink, 'logistic', 'layer', 'marker', pin, markerSize, blCount);
-    //     blCount++;
-    // }
-    // blLink.onclick = function(e) {
-    //     addCategoryOverlay(blLink, 'logistic', 'layer', 'marker', pin, markerSize, blCount);
-    //     blCount++;
-    // }
-
-    // if (overlay === 'resCS') {
-    //     addCategoryOverlay(resCSLink, 'resCS', 'layer', 'marker', pin, markerSize, resCSCount);
-    //     resCSCount++;
-    // }
-    // resCSLink.onclick = function(e) {
-    //     addCategoryOverlay(resCSLink, 'resCS', 'layer', 'marker', pin, markerSize, resCSCount);
-    //     resCSCount++;
-    // }
-
-    // if (overlay === 'meetingRoom') {
-    //     addCategoryOverlay(salleRLink, 'meetingRoom', 'layer', 'marker', pin, markerSize, salleRCount);
-    //     salleRCount++;
-    // }
-    // salleRLink.onclick = function(e) {
-    //     addCategoryOverlay(salleRLink, 'meetingRoom', 'layer', 'marker', pin, markerSize, salleRCount);
-    //     salleRCount++;
-    // }
-
-    // if (overlay === 'phdRoom') {
-    //     addCategoryOverlay(eDocLink, 'phdRoom', 'layer', 'marker', pin, markerSize, eDocCount);
-    //     eDocCount++;
-    // }
-    // eDocLink.onclick = function(e) {
-    //     addCategoryOverlay(eDocLink, 'phdRoom', 'layer', 'marker', pin, markerSize, eDocCount);
-    //     eDocCount++;
-    // }
-
-    // linearLink.onclick = function(e) {
-    //     addCategoryOverlay(linearLink, 'Route Principale', 'layer', 'line', linearColor, lineSize, linearCount);
-    //     linearCount++;
-    //     // addCategoryOverlay(linearLink, 'Accès PMR', 'layer', 'point', accesPMRColor, accesPMRIconSize, accesPMRCount);
-    //     // accesPMRCount += 1;
-    // }
-
-
+    if (overlay == 'service') {
+        addCategoryOverlay(serviceLink, 'service', serviceLinkState, 'marker', pin, markerSize, serviceCount);
+        if (serviceCount == 0) {
+            createHTMLList('service', serviceList, insertService, serviceCount);
+        }
+        serviceCount++;
+    }
+    serviceLink.onclick = function(e) {
+        addCategoryOverlay(serviceLink, 'service', serviceLinkState, 'marker', pin, markerSize, serviceCount);
+        if (serviceCount == 0) {
+            createHTMLList('service', serviceList, insertService, serviceCount);
+        }
+        serviceCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'service') {
+                map.flyTo({
+                    center: [-6.8681803, 33.9756317],
+                    zoom: 17,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
 });
 
 // Search bar
@@ -1972,12 +1877,12 @@ $("#btnRemovefilters").on("click", function() {
         }
     })
 
-    $('ul.nav li.active a.active').each(function(i) {
+    $('ul#metismenu li.active a.active').each(function(i) {
         if ($(this).hasClass("active"))
             $(this).removeClass("active");
     })
 
-    $('ul.nav li.active:not(.sidebar-search,.sidebar-remove-filters), ul.nav li.active:not(.sidebar-search,.sidebar-remove-filters) ul.in ').each(function(i) {
+    $('ul#metismenu li.active:not(.sidebar-search,.sidebar-remove-filters), ul#metismenu li.active:not(.sidebar-search,.sidebar-remove-filters) ul.in ').each(function(i) {
         if ($(this).hasClass("active"))
             $(this).removeClass("active");
         if ($(this).hasClass("in"))

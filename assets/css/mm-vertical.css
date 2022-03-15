@@ -30,13 +30,13 @@
 .sidebar-nav .metismenu a {
     position: relative;
     display: block;
-    padding: 13px 15px;
+    padding: 5px 0px;
     color: #212529;
     transition: all 0.3s ease-out;
     text-decoration: none;
     font-size: small;
     font-weight: 600;
-    padding-left: 28px;
+    padding-left: 34px;
 }
 
 .sidebar-nav .metismenu ul a {
