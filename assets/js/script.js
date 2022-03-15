@@ -178,10 +178,12 @@ headingLabel.push('amphitheater');
 // Administration
 
 let adminCount = 0;
-let adminList = [];
+// let adminList = [];
 let adminLink = document.getElementById('admin');
-let insertAdmin = document.getElementById('insertAdmin');
+// let insertAdmin = document.getElementById('insertAdmin');
 headingLabel.push('admin');
+
+// Services
 
 let serviceCount = 0;
 let serviceList = [];
@@ -189,7 +191,19 @@ let serviceLink = document.getElementById('service');
 let insertService = document.getElementById('insertService');
 headingLabel.push('service');
 
-// Services
+let cdaCount = 0;
+let cdaLink = document.getElementById('cda');
+headingLabel.push('cda');
+
+let biblioCount = 0;
+let biblioLink = document.getElementById('biblio');
+headingLabel.push('biblio');
+
+let studyCount = 0;
+let studyLink = document.getElementById('study');
+headingLabel.push('study');
+
+
 
 // Clinic Equine
 let clinicCount = 0;
@@ -1386,6 +1400,18 @@ setInterval(function() {
     serviceLinkState = serviceLink.nextElementSibling.className;
 }, 500);
 
+setInterval(function() {
+    cdaLinkState = cdaLink.nextElementSibling.className;
+}, 500);
+
+setInterval(function() {
+    biblioLinkState = biblioLink.nextElementSibling.className;
+}, 500);
+
+setInterval(function() {
+    studyLinkState = studyLink.nextElementSibling.className;
+}, 500);
+
 map.on('load', function() {
 
     // ? Adding data sources
@@ -1548,6 +1574,84 @@ map.on('load', function() {
             }
         }
     }
+
+    if (overlay == 'cda') {
+        addCategoryOverlay(cdaLink, 'cda', cdaLinkState, 'marker', pin, markerSize, cdaCount);
+        // if (cdaCount == 0) {
+        //     createHTMLList('cda', cdaList, insertCda, cdaCount);
+        // }
+        // cdaCount++;
+    }
+    cdaLink.onclick = function(e) {
+        addCategoryOverlay(cdaLink, 'cda', cdaLinkState, 'marker', pin, markerSize, cdaCount);
+        // if (cdaCount == 0) {
+        //     createHTMLList('cda', cdaList, insertCda, cdaCount);
+        // }
+        cdaCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'cda') {
+                map.flyTo({
+                    center: [-6.8625206, 33.9800988],
+                    zoom: 17,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
+
+    if (overlay == 'biblio') {
+        addCategoryOverlay(biblioLink, 'biblio', biblioLinkState, 'marker', pin, markerSize, biblioCount);
+        // if (biblioCount == 0) {
+        //     createHTMLList('biblio', biblioList, insertBiblio, biblioCount);
+        // }
+        biblioCount++;
+    }
+    biblioLink.onclick = function(e) {
+        addCategoryOverlay(biblioLink, 'biblio', biblioLinkState, 'marker', pin, markerSize, biblioCount);
+        // if (biblioCount == 0) {
+        //     createHTMLList('biblio', biblioList, insertBiblio, biblioCount);
+        // }
+        biblioCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'biblio') {
+                map.flyTo({
+                    center: [-6.86703011, 33.97634391],
+                    zoom: 17,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
+
+    if (overlay == 'study') {
+        addCategoryOverlay(studyLink, 'study', studyLinkState, 'marker', pin, markerSize, studyCount);
+        // if (studyCount == 0) {
+        //     createHTMLList('study', studyList, insertStudy, studyCount);
+        // }
+        studyCount++;
+    }
+    studyLink.onclick = function(e) {
+        addCategoryOverlay(studyLink, 'study', studyLinkState, 'marker', pin, markerSize, studyCount);
+        // if (studyCount == 0) {
+        //     createHTMLList('study', studyList, insertStudy, studyCount);
+        // }
+        studyCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'study') {
+                map.flyTo({
+                    center: [-6.86222444, 33.98028317],
+                    zoom: 17,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
+
+
+
 });
 
 // Search bar
