@@ -298,7 +298,7 @@ function getiav3D() {
         filter: ['==', 'name', ''],
         paint: {
             // the color of the building extrusion when being hovered
-            'fill-extrusion-color': '#d42e2e',
+            'fill-extrusion-color': ['get', 'hover_color'],
             'fill-extrusion-height': [
                 'interpolate', ['linear'],
                 ['zoom'],
@@ -568,6 +568,56 @@ function getiav2D() {
 }
 
 function addIconPlacement() {
+
+    // Basket
+    map.loadImage(
+        './assets/img/icons/basketball-ball.png',
+        (error, image) => {
+            if (error) throw error;
+
+            map.addImage('basket' + iconCount, image);
+
+            map.addLayer({
+                'id': 'basket' + iconCount,
+                'type': 'symbol',
+                'source': {
+                    'type': 'geojson',
+                    'data': pointsIAV
+                },
+                filter: ['==', 'icon_name', 'basket'],
+                'layout': {
+                    'visibility': 'visible',
+                    'icon-image': 'basket' + iconCount,
+                    'icon-size': 0.15
+                },
+                minzoom: 15.5,
+            })
+        })
+
+    // Basket
+    map.loadImage(
+        './assets/img/icons/signage.png',
+        (error, image) => {
+            if (error) throw error;
+
+            map.addImage('signage' + iconCount, image);
+
+            map.addLayer({
+                'id': 'signage' + iconCount,
+                'type': 'symbol',
+                'source': {
+                    'type': 'geojson',
+                    'data': pointsIAV
+                },
+                filter: ['==', 'icon_name', 'parking'],
+                'layout': {
+                    'visibility': 'visible',
+                    'icon-image': 'signage' + iconCount,
+                    'icon-size': 0.25
+                },
+                minzoom: 15.5,
+            })
+        })
 
     // Grass
     map.loadImage(
