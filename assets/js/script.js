@@ -203,27 +203,19 @@ let studyCount = 0;
 let studyLink = document.getElementById('study');
 headingLabel.push('study');
 
+let foodCount = 0;
+let foodList = [];
+let foodLink = document.getElementById('food');
+let insertFood = document.getElementById('insertFood');
+headingLabel.push('food');
+
+let roomCount = 0;
+let roomList = [];
+let roomLink = document.getElementById('room');
+let insertRoom = document.getElementById('insertRoom');
+headingLabel.push('room');
 
 
-// Clinic Equine
-let clinicCount = 0;
-const clinicLink = document.getElementById('clinique');
-headingLabel.push('clinique');
-
-// Harka
-let harkaCount = 0;
-const harkaLink = document.getElementById('harka');
-headingLabel.push('harka');
-
-// ecurie
-let ecurieCount = 0;
-const ecurieLink = document.getElementById('ecurie');
-headingLabel.push('ecurie');
-
-// Equitation
-let equiCount = 0;
-const equiLink = document.getElementById('equitation');
-headingLabel.push('equitation');
 
 // Linear geometries
 var linearCount = 0;
@@ -231,7 +223,7 @@ var linearLink = document.getElementById('Cheminements accessibles');
 var linearColor = '#138fad';
 var linearType = 'line';
 
-var listLayers = [departmentsLink, amphitheaterLink, adminLink, serviceLink, clinicLink, harkaLink, ecurieLink, equiLink];
+var listLayers = [departmentsLink, amphitheaterLink, adminLink, serviceLink, cdaLink, biblioLink, studyLink, foodLink, roomLink];
 
 // Other variables
 var Layers = [];
@@ -1412,6 +1404,14 @@ setInterval(function() {
     studyLinkState = studyLink.nextElementSibling.className;
 }, 500);
 
+setInterval(function() {
+    foodLinkState = foodLink.nextElementSibling.className;
+}, 500);
+
+setInterval(function() {
+    roomLinkState = roomLink.nextElementSibling.className;
+}, 500);
+
 map.on('load', function() {
 
     // ? Adding data sources
@@ -1642,6 +1642,56 @@ map.on('load', function() {
             if (Layers[i] = 'study') {
                 map.flyTo({
                     center: [-6.86222444, 33.98028317],
+                    zoom: 17,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
+
+    if (overlay == 'food') {
+        addCategoryOverlay(foodLink, 'food', foodLinkState, 'marker', pin, markerSize, foodCount);
+        if (foodCount == 0) {
+            createHTMLList('food', foodList, insertFood, foodCount);
+        }
+        foodCount++;
+    }
+    foodLink.onclick = function(e) {
+        addCategoryOverlay(foodLink, 'food', foodLinkState, 'marker', pin, markerSize, foodCount);
+        if (foodCount == 0) {
+            createHTMLList('food', foodList, insertFood, foodCount);
+        }
+        foodCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'food') {
+                map.flyTo({
+                    center: [-6.8623910, 33.9802626],
+                    zoom: 17,
+                    pitch: 0,
+                    speed: 0.6
+                });
+            }
+        }
+    }
+
+    if (overlay == 'room') {
+        addCategoryOverlay(roomLink, 'room', roomLinkState, 'marker', pin, markerSize, roomCount);
+        if (roomCount == 0) {
+            createHTMLList('room', roomList, insertRoom, roomCount);
+        }
+        roomCount++;
+    }
+    roomLink.onclick = function(e) {
+        addCategoryOverlay(roomLink, 'room', roomLinkState, 'marker', pin, markerSize, roomCount);
+        if (roomCount == 0) {
+            createHTMLList('room', roomList, insertRoom, roomCount);
+        }
+        roomCount++;
+        for (let i = 0; i < Layers.length; i++) {
+            if (Layers[i] = 'room') {
+                map.flyTo({
+                    center: [-6.8620442, 33.9802653],
                     zoom: 17,
                     pitch: 0,
                     speed: 0.6
