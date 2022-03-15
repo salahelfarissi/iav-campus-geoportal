@@ -1,6 +1,6 @@
 #map {
     width: 100%;
-    height: 90vh;
+    height: 88vh;
 }
 
 #switchView {
@@ -195,4 +195,8 @@ a img {
 
 .sidebar-nav .active>a>.fa.arrow:before {
     content: "\f107";
+}
+
+.mapbox-improve-map {
+    display: none;
 }
