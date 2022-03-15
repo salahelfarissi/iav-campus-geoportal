@@ -589,7 +589,7 @@ function getiav2D() {
             'text-max-width': 8
         },
         paint: {
-            'text-color': '#5E34FF',
+            'text-color': '#42592C',
             'text-halo-color': '#fff',
             'text-halo-width': 2
         },
