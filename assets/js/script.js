@@ -7,25 +7,25 @@ $(function() {
 });
 
 // Window size
-$(function() {
-    $(window).bind('load resize', function() {
-        topOffset = 50;
-        width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
-        if (width < 768) {
-            $('div.navbar-collapse').addClass('collapse');
-            topOffset = 100;
-        } else {
-            $('div.navbar-collapse').removeClass('collapse');
-        };
+// $(function() {
+//     $(window).bind('load resize', function() {
+//         topOffset = 50;
+//         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+//         if (width < 768) {
+//             $('div.navbar-collapse').addClass('collapse');
+//             topOffset = 100;
+//         } else {
+//             $('div.navbar-collapse').removeClass('collapse');
+//         };
 
-        height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
-        height = height - topOffset;
-        if (height < 1) height = 1;
-        if (height > topOffset) {
-            $('#page-wrapper').css('min-height', (height) + 'px');
-        };
-    });
-});
+//         height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+//         height = height - topOffset;
+//         if (height < 1) height = 1;
+//         if (height > topOffset) {
+//             $('#page-wrapper').css('min-height', (height) + 'px');
+//         };
+//     });
+// });
 
 // Fading the jQuery loader
 jQuery(window).on('load', function() {
@@ -64,20 +64,25 @@ button3D.setAttribute('class', 'btn btn-primary');
 button3D.setAttribute('id', 'DDDButton');
 button3D.innerHTML = 'Vue en 3D';
 
+// Reference Zoom
+var refZoom = 15.5;
+
 if (screenWidth < 500) {
     device = 'phone';
     document.getElementById('map').style.height = '75vh';
-    document.getElementById('map').style.margin = '0';
+    // document.getElementById('map').style.margin = '0';
     refZoom = 15;
     dimButtonGroup.style.position = 'absolute';
-    dimButtonGroup.style.height = '50px';
+    // dimButtonGroup.style.height = '50px';
     dimButtonGroup.style.width = '200px';
     dimButtonGroup.style.top = '98%';
-    dimButtonGroup.style.left = '69%';
+    dimButtonGroup.style.left = '49%';
     dimButtonGroup.style.marginTop = '-25px';
     dimButtonGroup.style.marginLeft = '-50px';
     dimButtonGroup.appendChild(button2D);
     dimButtonGroup.appendChild(button3D);
+
+    document.getElementById('switchView').style.left = '60%';
 } else {
     dimButtonGroup.appendChild(button2D);
     dimButtonGroup.appendChild(button3D);
@@ -100,9 +105,6 @@ const mapExtent = [
 
 // Adding mapbox basemap
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FsYWhlbGZhcmlzc2kiLCJhIjoiY2ttb3p1Yzk3Mjl2bzJ2bno3OGlqcjJ2bCJ9.pErPZNgS_t5jzHlsp_XyRQ';
-
-// Reference Zoom
-let refZoom = 15.5;
 
 // Creating a map object
 const map = new mapboxgl.Map({
