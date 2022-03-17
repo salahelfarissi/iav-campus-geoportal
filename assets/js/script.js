@@ -2101,7 +2101,7 @@ function getSearchPopup() {
         if (searchItem.properties.category == 'Département de formation') {
             popupTitle += '<img style = \'height : 60px ; position : absolute ; right : 0\' src = \'' + searchItem.properties.image + '\'/>';
         } else {
-            popupContent += '<img src = \'' + searchItem.properties.image + '\'/>';
+            popupContent += '<img style = \'height : 50px; width : 50px; display : block; margin-left : auto; margin-right : auto\' src = \'' + searchItem.properties.image + '\'/>';
         }
     };
     searchPopup = new mapboxgl.Popup({
@@ -2183,26 +2183,26 @@ function getSearchedItem(item) {
             searchX = searchItem.geometry.coordinates[0];
             searchY = searchItem.geometry.coordinates[1];
 
-            if (dataPoints[i].properties.switchView === 'iav') {
-                map.setMaxBounds(mapExtent);
-                zoomClinic.style.backgroundColor = '#D9D9D9';
-                zoomiav.style.backgroundColor = '#184c78';
-                zoomApesa.style.backgroundColor = '#D9D9D9';
-            }
-            if (dataPoints[i].properties.switchView === 'clinic') {
-                map.setMaxBounds(mapExtent);
-                zoomClinic.style.backgroundColor = '#184c78';
-                zoomiav.style.backgroundColor = '#D9D9D9';
-                zoomApesa.style.backgroundColor = '#D9D9D9';
-            }
-            if (dataPoints[i].properties.switchView === 'apesa') {
-                map.setMaxBounds(mapExtent);
-                zoomApesa.style.color = 'white';
-                zoomiav.style.color = '#184c78';
-                zoomClinic.style.backgroundColor = '#D9D9D9';
-                zoomiav.style.backgroundColor = '#D9D9D9';
-                zoomApesa.style.backgroundColor = '#184c78';
-            }
+            // if (dataPoints[i].properties.switchView === 'iav') {
+            //     map.setMaxBounds(mapExtent);
+            //     zoomClinic.style.backgroundColor = '#D9D9D9';
+            //     zoomiav.style.backgroundColor = '#184c78';
+            //     zoomApesa.style.backgroundColor = '#D9D9D9';
+            // }
+            // if (dataPoints[i].properties.switchView === 'clinic') {
+            //     map.setMaxBounds(mapExtent);
+            //     zoomClinic.style.backgroundColor = '#184c78';
+            //     zoomiav.style.backgroundColor = '#D9D9D9';
+            //     zoomApesa.style.backgroundColor = '#D9D9D9';
+            // }
+            // if (dataPoints[i].properties.switchView === 'apesa') {
+            //     map.setMaxBounds(mapExtent);
+            //     zoomApesa.style.color = 'white';
+            //     zoomiav.style.color = '#184c78';
+            //     zoomClinic.style.backgroundColor = '#D9D9D9';
+            //     zoomiav.style.backgroundColor = '#D9D9D9';
+            //     zoomApesa.style.backgroundColor = '#184c78';
+            // }
             if (DDD) {
                 map.flyTo({
                     center: [searchX, searchY],
