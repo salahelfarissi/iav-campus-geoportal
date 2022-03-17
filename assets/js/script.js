@@ -120,7 +120,11 @@ jQuery(window).on('load', function() {
         bearing: 38,
         container: 'map',
         antialias: true,
-        attributionControl: false
+        attributionControl: false,
+        maxBounds: [
+            [-6.889706, 33.954409],
+            [-6.835639, 33.998427]
+        ],
     });
 
     // Correcting for arabic text direction for street names
@@ -1352,7 +1356,7 @@ jQuery(window).on('load', function() {
         }
         salleRX = roomOfInterest.geometry.coordinates[0];
         salleRY = roomOfInterest.geometry.coordinates[1];
-        if (roomOfInterest.properties.campus === 'iav') {
+        if (roomOfInterest.properties.switchView === 'iav') {
             map.setMaxBounds(mapExtent);
         } else {
             map.setMaxBounds(mapExtent);
@@ -2179,19 +2183,19 @@ jQuery(window).on('load', function() {
                 searchX = searchItem.geometry.coordinates[0];
                 searchY = searchItem.geometry.coordinates[1];
 
-                if (dataPoints[i].properties.campus === 'iav') {
+                if (dataPoints[i].properties.switchView === 'iav') {
                     map.setMaxBounds(mapExtent);
                     zoomClinic.style.backgroundColor = '#D9D9D9';
                     zoomiav.style.backgroundColor = '#184c78';
                     zoomApesa.style.backgroundColor = '#D9D9D9';
                 }
-                if (dataPoints[i].properties.campus === 'clinic') {
+                if (dataPoints[i].properties.switchView === 'clinic') {
                     map.setMaxBounds(mapExtent);
                     zoomClinic.style.backgroundColor = '#184c78';
                     zoomiav.style.backgroundColor = '#D9D9D9';
                     zoomApesa.style.backgroundColor = '#D9D9D9';
                 }
-                if (dataPoints[i].properties.campus === 'apesa') {
+                if (dataPoints[i].properties.switchView === 'apesa') {
                     map.setMaxBounds(mapExtent);
                     zoomApesa.style.color = 'white';
                     zoomiav.style.color = '#184c78';
