@@ -40,7 +40,6 @@
 }
 
 #searchButton.btn-primary {
-    /* background-color: #184C78; */
     color: #fff;
     height: 40px;
     width: 40px;
@@ -103,6 +102,7 @@
     font-size: 14px;
     font-weight: 400;
     height: 40px !important;
+    width: 15rem !important;
 }
 
 input:focus,
@@ -227,4 +227,28 @@ a img {
     #switchView {
         margin-left: -35% !important;
     }
+}
+
+.leaf {
+    background-image: url('../img/icons/radio_off.svg');
+    background-size: 14px 14px;
+    /* background-color: #e7f1ff; */
+    background-repeat: no-repeat;
+    background-position: 25px 50%;
+}
+
+.leaf.active {
+    /* background-color: #fff; */
+    background-image: url('../img/icons/radio_on.svg');
+}
+
+.badge {
+    font-size: .55em !important;
+    vertical-align: 120% !important;
+}
+
+.navbar-brand img {
+    height: 40px !important;
+    margin-right: 10px;
+    margin-bottom: 5px;
 }
