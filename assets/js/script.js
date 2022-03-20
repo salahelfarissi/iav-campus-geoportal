@@ -1008,7 +1008,7 @@ jQuery(window).on('load', function() {
                             type: 'geojson',
                             data: pointsIAV
                         },
-                        filter: ['==', 'category', layerName],
+                        filter: ['==', 'grouping', layerName],
                         layout: {
                             'visibility': 'visible'
                         },
@@ -1032,7 +1032,7 @@ jQuery(window).on('load', function() {
                                 type: 'geojson',
                                 data: pointsIAV
                             },
-                            filter: ['==', 'category', layerName],
+                            filter: ['==', 'grouping', layerName],
                             layout: {
                                 'text-field': '{label}',
                                 'text-anchor': 'center',
@@ -1064,7 +1064,7 @@ jQuery(window).on('load', function() {
                                 'type': 'geojson',
                                 'data': pointsIAV
                             },
-                            'filter': ['==', 'category', layerName],
+                            'filter': ['==', 'grouping', layerName],
                             'layout': {
                                 'icon-image': layerName + 'image',
                                 'icon-size': {
@@ -1089,7 +1089,7 @@ jQuery(window).on('load', function() {
                                     type: 'geojson',
                                     data: pointsIAV
                                 },
-                                filter: ['==', 'category', layerName],
+                                filter: ['==', 'grouping', layerName],
                                 layout: {
                                     'text-field': '{label}',
                                     'text-anchor': 'center',
@@ -1218,10 +1218,10 @@ jQuery(window).on('load', function() {
         popupTitle = null;
         popupContent = [];
         //Titre de la popup
-        if (feature.properties.category !== 'null' && feature.properties.category !== null && feature.properties.category !== '') {
-            popupTitle = feature.properties.category;
-        }
-        if (feature.properties.name !== 'null' && feature.properties.name !== null && feature.properties.name !== '') {
+        // if (feature.properties.grouping !== 'null' && feature.properties.grouping !== null && feature.properties.grouping !== '') {
+        //     popupTitle = feature.properties.grouping;
+        // }
+        if (feature.properties.name !== null) {
             popupTitle = feature.properties.name;
         }
         // Contenu de la popup
@@ -1229,29 +1229,30 @@ jQuery(window).on('load', function() {
         //     popupContent += '<p>Building: ' + feature.properties.building + '</p>';
         // }
         if (feature.properties.brochure !== 'null' && feature.properties.brochure !== null && feature.properties.brochure !== '') {
+            console.log(feature.properties.brochure);
             popupContent += '<p>• <b>Brochure</b>' + feature.properties.brochure + '</p>';
         }
         // if (feature.properties.capacity !== 'null' && feature.properties.capacity !== null && feature.properties.capacity !== '') {
         //     popupContent += '<p>' + feature.properties.capacity + '<p>';
         // }
-        if (feature.properties.info !== 'null' && feature.properties.info !== null && feature.properties.info !== '') {
-            popupContent += '<p>' + feature.properties.info + '<p>';
-        }
-        if (feature.properties.link !== 'null' && feature.properties.link !== null && feature.properties.link !== '') {
-            popupContent += '<p><a href = ' + feature.properties.link + ' target=\'_blank\'>Site internet<a></p>';
-        }
+        // if (feature.properties.info !== 'null' && feature.properties.info !== null && feature.properties.info !== '') {
+        //     popupContent += '<p>' + feature.properties.info + '<p>';
+        // }
+        // if (feature.properties.link !== 'null' && feature.properties.link !== null && feature.properties.link !== '') {
+        //     popupContent += '<p><a href = ' + feature.properties.link + ' target=\'_blank\'>Site internet<a></p>';
+        // }
         if (feature.properties.mail !== 'null' && feature.properties.mail !== null && feature.properties.mail !== '') {
             popupContent += '<p>• <b>E-mail</b> <a href="mailto:' + feature.properties.mail + '">' + feature.properties.mail + '</a>' + '</p>';
         }
-        if (feature.properties.phone !== 'null' && feature.properties.phone !== null && feature.properties.phone !== '') {
-            popupContent += '<p>Contacter par téléphone : ' + feature.properties.phone + '</p>';
-        }
+        // if (feature.properties.phone !== 'null' && feature.properties.phone !== null && feature.properties.phone !== '') {
+        //     popupContent += '<p>Contacter par téléphone : ' + feature.properties.phone + '</p>';
+        // }
         if (feature.properties.image !== 'null' && feature.properties.image !== null && feature.properties.image !== '') {
-            if (feature.properties.category == 'Département de formation') {
-                popupTitle += '<img style = \'height : 60px; position : absolute; right : 0;top:0\' src = \'' + feature.properties.image + '\'/>'
-            } else {
-                popupContent += '<img style = \'height : 50px; width : 50px; display : block; margin-left : auto; margin-right : auto\' src = \'' + feature.properties.image + '\'/>'
-            }
+            // if (feature.properties.grouping == 'Département de formation') {
+            // popupTitle += '<img style = \'height : 60px; position : absolute; right : 0;top:0\' src = \'' + feature.properties.image + '\'/>'
+            // } else {
+            popupContent += '<img style = \'height : 50px; width : 50px; display : block; margin-left : auto; margin-right : auto; margin-bottom: 5px;\' src = \'' + feature.properties.image + '\'/>'
+                // }
         }
     }
 
@@ -1331,7 +1332,7 @@ jQuery(window).on('load', function() {
                 closeButton: false
             })
             .setLngLat(roomOfInterest.geometry.coordinates)
-            .setHTML('<h1>' + popupTitle + '</h1><p>' + popupContent + '</p>')
+            .setHTML('<h1>' + popupTitle + '</h1>' + popupContent)
             .addTo(map);
     };
 
@@ -2119,7 +2120,7 @@ jQuery(window).on('load', function() {
             popupContent += '<p>Phone: ' + searchItem.properties.phone + '</p>';
         };
         if (searchItem.properties.image != null) {
-            if (searchItem.properties.category == 'Département de formation') {
+            if (searchItem.properties.grouping == 'Département de formation') {
                 popupTitle += '<img style = \'height : 60px ; position : absolute ; right : 0\' src = \'' + searchItem.properties.image + '\'/>';
             } else {
                 popupContent += '<img style = \'height : 50px; width : 50px; display : block; margin-left : auto; margin-right : auto\' src = \'' + searchItem.properties.image + '\'/>';
