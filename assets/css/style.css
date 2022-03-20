@@ -66,6 +66,8 @@
 .mapboxgl-popup-content img {
     height: 150px;
     width: 150px;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
 }
 
 .mapboxgl-popup-content h1 {
