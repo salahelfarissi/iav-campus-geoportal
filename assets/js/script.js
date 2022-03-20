@@ -122,7 +122,7 @@ jQuery(window).on('load', function() {
     // Creating a map object
     const map = new mapboxgl.Map({
         style: 'mapbox://styles/salahelfarissi/ckzzjh6kl000k14mf1l6b88wk',
-        center: [-6.8665775, 33.9769235],
+        center: [-6.8648941, 33.9761176],
         zoom: refZoom,
         pitch: 0,
         bearing: 128,
@@ -1372,11 +1372,11 @@ jQuery(window).on('load', function() {
         }
         salleRX = roomOfInterest.geometry.coordinates[0];
         salleRY = roomOfInterest.geometry.coordinates[1];
-        if (roomOfInterest.properties.switchView === 'iav') {
-            map.setMaxBounds(mapExtent);
-        } else {
-            map.setMaxBounds(mapExtent);
-        };
+        // if (roomOfInterest.properties.switchView === 'iav') {
+        //     map.setMaxBounds(mapExtent);
+        // } else {
+        //     map.setMaxBounds(mapExtent);
+        // };
         if (DDD) {
             map.flyTo({
                 center: [salleRX, salleRY],
@@ -1418,7 +1418,8 @@ jQuery(window).on('load', function() {
         map.flyTo({
             zoom: refZoom,
             center: [-6.8665775, 33.9769235],
-            essential: true
+            essential: true,
+            bearing: 128
         });
         // zoomiav.style.backgroundColor = '#184c78';
         // zoomClinic.style.backgroundColor = '#D9D9D9';
@@ -1434,7 +1435,8 @@ jQuery(window).on('load', function() {
         map.flyTo({
             zoom: refZoom,
             center: [-6.8685626, 33.9724241],
-            essential: true
+            essential: true,
+            bearing: 128
         });
         // zoomApesa.style.backgroundColor = '#184c78';
         // zoomClinic.style.backgroundColor = '#D9D9D9';
@@ -1451,7 +1453,8 @@ jQuery(window).on('load', function() {
         map.flyTo({
             zoom: refZoom,
             center: [-6.8686041, 33.9742859],
-            essential: true
+            essential: true,
+            bearing: 128
         });
         // zoomClinic.style.backgroundColor = '#184c78';
         // zoomiav.style.backgroundColor = '#D9D9D9';
