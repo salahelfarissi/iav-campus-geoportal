@@ -321,6 +321,7 @@ jQuery(window).on('load', function() {
 
     // Load building data with extrusion effect
     function getiav3D() {
+        // map.removeLayer(iav2DId);
         if (iav3DCount !== 0) {
             map.removeLayer(iav2DId);
             map.removeLayer(iav2DHId);
