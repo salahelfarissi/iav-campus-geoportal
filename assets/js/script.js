@@ -2102,7 +2102,7 @@ jQuery(window).on('load', function() {
         //     popupContent += '<p>Building: ' + searchItem.properties.building;
         // };
         if (searchItem.properties.brochure != null) {
-            popupContent += '<p>Brochure' + searchItem.properties.brochure + '</p>';
+            popupContent += '<p>• <b>Brochure</b>' + searchItem.properties.brochure + '</p>';
         };
         if (searchItem.properties.info != null) {
             popupContent += '<p>' + searchItem.properties.info + '<p>';
@@ -2110,28 +2110,28 @@ jQuery(window).on('load', function() {
         // if (searchItem.properties.capacity != null) {
         //     popupContent += '<p>' + searchItem.properties.capacity + '<p>';
         // };
-        if (searchItem.properties.link != null) {
-            popupContent += '<p><a href = ' + searchItem.properties.link + ' target=\'_blank\'>Site internet<a></p>';
-        };
+        // if (searchItem.properties.link != null) {
+        //     popupContent += '<p><a href = ' + searchItem.properties.link + ' target=\'_blank\'>Site internet<a></p>';
+        // };
         if (searchItem.properties.mail != null) {
-            popupContent += '<p>Mail: ' + searchItem.properties.mail + '</p>';
+            popupContent += '<p>• <b>E-mail</b> <a href="mailto:' + searchItem.properties.mail + '">' + searchItem.properties.mail + '</a>' + '</p>';
         };
-        if (searchItem.properties.phone != null) {
-            popupContent += '<p>Phone: ' + searchItem.properties.phone + '</p>';
-        };
+        // if (searchItem.properties.phone != null) {
+        //     popupContent += '<p>Phone: ' + searchItem.properties.phone + '</p>';
+        // };
         if (searchItem.properties.image != null) {
-            if (searchItem.properties.grouping == 'Département de formation') {
-                popupTitle += '<img style = \'height : 60px ; position : absolute ; right : 0\' src = \'' + searchItem.properties.image + '\'/>';
-            } else {
-                popupContent += '<img style = \'height : 50px; width : 50px; display : block; margin-left : auto; margin-right : auto\' src = \'' + searchItem.properties.image + '\'/>';
-            }
+            // if (searchItem.properties.grouping == 'Département de formation') {
+            //     popupTitle += '<img style = \'height : 60px ; position : absolute ; right : 0\' src = \'' + searchItem.properties.image + '\'/>';
+            // } else {
+            popupContent += '<img style = \'height : 50px; width : 50px; display : block; margin-left : auto; margin-right : auto\' src = \'' + searchItem.properties.image + '\'/>';
+            // }
         };
         searchPopup = new mapboxgl.Popup({
                 offset: [0, -45],
                 closeButton: false
             })
             .setLngLat(searchItem.geometry.coordinates)
-            .setHTML('<h1>' + popupTitle + '</h1><p>' + popupContent + '</p>')
+            .setHTML('<h1>' + popupTitle + '</h1>' + popupContent)
             .addTo(map);
     };
 
