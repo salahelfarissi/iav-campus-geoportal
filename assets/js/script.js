@@ -748,7 +748,7 @@ jQuery(window).on('load', function() {
                         'type': 'geojson',
                         'data': pointsIAV
                     },
-                    filter: ['==', 'name', 'Clinic équine'],
+                    filter: ['==', 'name', 'Clinique équine'],
                     'layout': {
                         'visibility': 'visible',
                         'icon-image': 'clinic' + iconCount,
