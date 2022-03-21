@@ -782,6 +782,30 @@ jQuery(window).on('load', function() {
                     minzoom: 15.5,
                 })
             })
+
+        map.loadImage(
+            './assets/img/icons/barrier.png',
+            (error, image) => {
+                if (error) throw error;
+
+                map.addImage('barrier' + iconCount, image);
+
+                map.addLayer({
+                    'id': 'barrier' + iconCount,
+                    'type': 'symbol',
+                    'source': {
+                        'type': 'geojson',
+                        'data': pointsIAV
+                    },
+                    filter: ['==', 'icon_name', 'entrance'],
+                    'layout': {
+                        'visibility': 'visible',
+                        'icon-image': 'barrier' + iconCount,
+                        'icon-size': 0.30
+                    },
+                    minzoom: 15.5,
+                })
+            })
     }
 
     function addPointOverlay(name, iconSize) {

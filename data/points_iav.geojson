@@ -3,6 +3,7 @@
 "name": "points_iav",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
+{ "type": "Feature", "properties": { "name": null, "label": null, "brochure": null, "mail": null, "image": null, "grouping": null, "department": null, "label_state": null, "icon_name": "entrance", "id": null }, "geometry": { "type": "Point", "coordinates": [ -6.863998042951765, 33.981314851504933 ] } },
 { "type": "Feature", "properties": { "name": "Bureau logistique", "label": "L", "brochure": null, "mail": "charaf.ebrahmi@gmail.com", "image": null, "grouping": "admin", "department": "Administration ", "label_state": 0, "id": 1 }, "geometry": { "type": "Point", "coordinates": [ -6.866274230980303, 33.978812661399743 ] } },
 { "type": "Feature", "properties": { "name": "Pavillon 6 (Garçons)", "label": "R", "brochure": null, "mail": "economat.iav@gmail.com", "image": null, "grouping": "room", "department": "Internat", "label_state": 0, "id": 2 }, "geometry": { "type": "Point", "coordinates": [ -6.861575808244096, 33.980232426118953 ] } },
 { "type": "Feature", "properties": { "name": "Pavillon 3 (Garçons)", "label": "R", "brochure": null, "mail": "economat.iav@gmail.com", "image": null, "grouping": "room", "department": "Internat", "label_state": 0, "id": 3 }, "geometry": { "type": "Point", "coordinates": [ -6.861735049146822, 33.980071693528586 ] } },
