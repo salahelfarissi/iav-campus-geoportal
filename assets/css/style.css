@@ -14,9 +14,9 @@
 
 #switchView button {
     border: none;
-    padding: 2px 8px;
+    /* padding: 2px 8px; */
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     font-weight: 700;
 }
 
@@ -25,17 +25,18 @@
     right: 50px;
     top: 10px;
     z-index: 9999;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     font-weight: 700;
 }
 
 #DDD button {
     /* background-color: grey; */
     border: none;
-    padding: 2px 8px;
+    /* padding: 2px 8px; */
     opacity: 0.85;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    /* font-family: 'Roboto', sans-serif; */
+    /* Bold */
     font-weight: 700;
 }
 

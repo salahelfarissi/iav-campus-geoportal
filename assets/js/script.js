@@ -55,16 +55,16 @@ jQuery(window).on('load', function() {
     // Creates the HTML element specified by tagName
     const button2D = document.createElement('button');
 
-    button2D.setAttribute('class', 'btn btn-primary');
+    button2D.setAttribute('class', 'btn btn-primary btn-sm');
     button2D.setAttribute('id', 'DDButton');
-    button2D.innerHTML = 'Vue en plan';
+    button2D.innerHTML = 'Vue en 2D';
 
     // Creating the 3D button toggle
     const button3D = document.createElement('button');
 
-    button3D.setAttribute('class', 'btn btn-primary');
+    button3D.setAttribute('class', 'btn btn-primary btn-small');
     button3D.setAttribute('id', 'DDDButton');
-    button3D.innerHTML = 'Vue en 3D';
+    button3D.innerHTML = 'Vue en 2.5D';
 
     // Reference Zoom
     var refZoom = 15.5;
@@ -2283,8 +2283,8 @@ jQuery(window).on('load', function() {
     // DDButton.style.backgroundColor = '#184c78';
     // DDDButton.style.backgroundColor = '#dddddd';
     // DDDButton.style.color = '#184c78';
-    DDButton.style.fontSize = '12px';
-    DDDButton.style.fontSize = '12px';
+    // DDButton.style.fontSize = '12px';
+    // DDDButton.style.fontSize = '12px';
 
     DDD = false
 
