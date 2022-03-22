@@ -92,6 +92,7 @@ jQuery(window).on('load', function() {
 
         document.getElementById('switchView').style.left = '60%';
         $('#carouselExampleCaptions').remove();
+        $('#quote').remove();
     } else {
         dimButtonGroup.appendChild(button2D);
         dimButtonGroup.appendChild(button3D);
