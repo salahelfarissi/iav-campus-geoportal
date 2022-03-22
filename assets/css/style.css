@@ -18,6 +18,7 @@
     font-size: 12px;
     /* font-family: 'Roboto', sans-serif; */
     font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #DDD {
@@ -36,6 +37,7 @@
     opacity: 0.85;
     font-size: 12px;
     /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
     /* Bold */
     font-weight: 700;
 }
