@@ -93,6 +93,8 @@ jQuery(window).on('load', function() {
         document.getElementById('switchView').style.left = '60%';
         $('#carouselExampleCaptions').remove();
         $('#quote').remove();
+    } else if (screenWidth < 768) {
+        $('#carouselExampleCaptions').remove();
     } else {
         dimButtonGroup.appendChild(button2D);
         dimButtonGroup.appendChild(button3D);
@@ -108,8 +110,10 @@ jQuery(window).on('load', function() {
     }
 
     if (screenWidth < 1000 && screenWidth > 500) {
-        document.getElementById('switchView').style.marginLeft = '-35%';
+        // document.getElementById('switchView').style.marginLeft = '-35%';
     }
+
+    if (screenWidth < 768) {}
 
     //IAV extent
     const mapExtent = [
@@ -123,7 +127,7 @@ jQuery(window).on('load', function() {
     // Creating a map object
     const map = new mapboxgl.Map({
         style: 'mapbox://styles/salahelfarissi/ckzzjh6kl000k14mf1l6b88wk',
-        center: [-6.8648941, 33.9761176],
+        center: [-6.8665775, 33.9769235],
         zoom: refZoom,
         pitch: 0,
         bearing: 128,
