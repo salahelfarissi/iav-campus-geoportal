@@ -112,7 +112,6 @@
 input:focus,
 textarea:focus,
 select:focus {
-    outline-offset: 0px !important;
     outline: none !important;
 }
 
@@ -255,4 +254,12 @@ a img {
     height: 40px !important;
     margin-right: 10px;
     margin-bottom: 5px;
+}
+
+.card-body p {
+    font-size: small;
+}
+
+.card-body footer {
+    font-size: small;
 }
