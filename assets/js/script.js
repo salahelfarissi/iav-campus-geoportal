@@ -92,7 +92,7 @@ jQuery(window).on('load', function() {
 
         document.getElementById('switchView').style.left = '60%';
         $('#carouselExampleCaptions').remove();
-        $('#quote').remove();
+        // $('#quote').remove();
     } else if (screenWidth < 768) {
         $('#carouselExampleCaptions').remove();
     } else {
