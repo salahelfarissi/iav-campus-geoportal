@@ -48,17 +48,3 @@
     padding: 0px 15px 0px 45px;
     font-size: 11px;
 }
-
-.sidebar-nav .metismenu a:hover,
-.sidebar-nav .metismenu a:focus,
-.sidebar-nav .metismenu a:active,
-.sidebar-nav .metismenu .mm-active>a {
-    color: #0c63e4;
-    text-decoration: none;
-}
-
-
-/* .sidebar-nav .metismenu .mm-active>a {
-    background: #e7f1ff;
-    border-radius: 3px;
-} */

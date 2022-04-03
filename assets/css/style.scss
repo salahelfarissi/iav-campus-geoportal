@@ -1,3 +1,9 @@
+$primaryColor: #005C53;
+$secondaryColor: #03A696;
+#map {
+    height: auto;
+}
+
 #switchView {
     position: absolute;
     left: 40%;
@@ -7,15 +13,10 @@
     z-index: 9999;
 }
 
-#map {
-    height: auto;
-}
-
 #switchView button {
     border: none;
-    /* padding: 2px 8px; */
+    background-color: $primaryColor;
     font-size: 12px;
-    /* font-family: 'Roboto', sans-serif; */
     font-weight: 700;
     font-family: 'Open Sans', sans-serif;
 }
@@ -25,19 +26,15 @@
     right: 50px;
     top: 10px;
     z-index: 9999;
-    /* font-family: 'Roboto', sans-serif; */
     font-weight: 700;
 }
 
 #DDD button {
-    /* background-color: grey; */
+    background-color: $primaryColor;
     border: none;
-    /* padding: 2px 8px; */
     opacity: 0.85;
     font-size: 12px;
-    /* font-family: 'Roboto', sans-serif; */
     font-family: 'Open Sans', sans-serif;
-    /* Bold */
     font-weight: 700;
 }
 
@@ -49,6 +46,7 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 20px 20px;
+    background-color: $primaryColor;
     padding: 0;
     border: none;
 }
@@ -57,11 +55,14 @@
     background-image: url('../img/icons/magnifying_glass_off.svg');
 }
 
+.sidebar-remove-filters button {
+    background-color: $primaryColor;
+}
+
 .mapboxgl-popup-content {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
     padding: 0;
     min-width: 150px;
-    /* box-shadow: 2px 1px 1px #0d6efd; */
     max-width: 150px;
 }
 
@@ -73,7 +74,7 @@
 }
 
 .mapboxgl-popup-content h1 {
-    background: #0d6efd;
+    background: $primaryColor;
     color: #fff;
     margin: 0;
     display: block;
@@ -170,22 +171,22 @@ a img {
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
-    border-top-color: #0d6efd;
+    border-top-color: $primaryColor;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
-    border-top-color: #0d6efd;
+    border-top-color: $primaryColor;
     opacity: 0.8;
 }
 
 .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
-    border-top-color: #0d6efd;
+    border-top-color: $primaryColor;
 }
 
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
-    border-top-color: #0d6efd;
+    border-top-color: $primaryColor;
 }
 
 .sidebar-nav .arrow {
@@ -206,14 +207,12 @@ a img {
 
 .loader {
     background-color: white;
-    /* The icon for the mouse indicating charging */
     cursor: wait;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     position: fixed;
-    /* Stack order */
     z-index: 999999;
 }
 
@@ -223,7 +222,6 @@ a img {
     top: 45%;
     width: 100px;
     height: 100px;
-    /* margin: -15px 0 0 -15px; */
 }
 
 @media only screen and (max-width: 1000px) {
@@ -235,13 +233,11 @@ a img {
 .leaf {
     background-image: url('../img/icons/radio_off.svg');
     background-size: 14px 14px;
-    /* background-color: #e7f1ff; */
     background-repeat: no-repeat;
     background-position: 25px 50%;
 }
 
 .leaf.active {
-    /* background-color: #fff; */
     background-image: url('../img/icons/radio_on.svg');
 }
 
@@ -262,4 +258,12 @@ a img {
 
 .card-body footer {
     font-size: small;
+}
+
+.sidebar-nav .metismenu a:hover,
+.sidebar-nav .metismenu a:focus,
+.sidebar-nav .metismenu a:active,
+.sidebar-nav .metismenu .mm-active>a {
+    color: $secondaryColor;
+    text-decoration: none;
 }
