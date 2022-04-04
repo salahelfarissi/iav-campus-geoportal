@@ -43,7 +43,7 @@ jQuery(window).on('load', function() {
 
     button3D.setAttribute('class', 'btn btn-primary btn-small');
     button3D.setAttribute('id', 'DDDButton');
-    button3D.innerHTML = 'Vue en 2.5D';
+    button3D.innerHTML = 'Vue en 3D';
 
     // Reference Zoom
     var refZoom = 15.5;

@@ -11,14 +11,13 @@ $secondaryColor: #03A696;
     top: 10px;
     opacity: 0.85;
     z-index: 9999;
-}
-
-#switchView button {
-    border: none;
-    background-color: $primaryColor;
-    font-size: 12px;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
+    button {
+        border: none;
+        background-color: $primaryColor;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Open Sans', sans-serif;
+    }
 }
 
 #DDD {
@@ -27,15 +26,14 @@ $secondaryColor: #03A696;
     top: 10px;
     z-index: 9999;
     font-weight: 700;
-}
-
-#DDD button {
-    background-color: $primaryColor;
-    border: none;
-    opacity: 0.85;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    button {
+        background-color: $primaryColor;
+        border: none;
+        opacity: 0.85;
+        font-size: 12px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+    }
 }
 
 #searchButton.btn-primary {
