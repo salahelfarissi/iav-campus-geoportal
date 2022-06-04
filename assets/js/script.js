@@ -693,6 +693,56 @@ jQuery(window).on('load', function() {
                     minzoom: 15.5,
                 })
             })
+        
+                // tree
+            map.loadImage(
+                    './assets/img/icons/tree.png',
+                    (error, image) => {
+                        if (error) throw error;
+        
+                        map.addImage('tree' + iconCount, image);
+        
+                        map.addLayer({
+                            'id': 'tree' + iconCount,
+                            'type': 'symbol',
+                            'source': {
+                                'type': 'geojson',
+                                'data': pointsIAV
+                            },
+                            filter: ['==', 'name', 'tree'],
+                            'layout': {
+                                'visibility': 'visible',
+                                'icon-image': 'tree' + iconCount,
+                                'icon-size': 0.045
+                            },
+                            minzoom: 13.5,
+                        })
+                    })
+            
+                            // palmier
+            map.loadImage(
+                                './assets/img/icons/palmier.png',
+                                (error, image) => {
+                                    if (error) throw error;
+                    
+                                    map.addImage('palmier' + iconCount, image);
+                    
+                                    map.addLayer({
+                                        'id': 'palmier' + iconCount,
+                                        'type': 'symbol',
+                                        'source': {
+                                            'type': 'geojson',
+                                            'data': pointsIAV
+                                        },
+                                        filter: ['==', 'name', 'palmier'],
+                                        'layout': {
+                                            'visibility': 'visible',
+                                            'icon-image': 'palmier' + iconCount,
+                                            'icon-size': 0.04
+                                        },
+                                        minzoom: 13.5,
+                                    })
+                                })
 
         // Library
         map.loadImage(
