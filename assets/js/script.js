@@ -118,6 +118,10 @@ jQuery(window).on('load', function() {
             [-6.835639, 33.998427]
         ],
     });
+ 
+    map.addControl(new mapboxgl.FullscreenControl());
+
+
 
     // Correcting for arabic text direction for street names
     mapboxgl.setRTLTextPlugin(
