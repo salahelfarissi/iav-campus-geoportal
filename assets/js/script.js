@@ -1699,7 +1699,7 @@ jQuery(window).on('load', function() {
             paint: {
                 'line-color': ['get', 'color'],
                 'line-width': ['get', 'width'],
-                'line-blur': 3,
+                'line-blur': 0,
                 'line-dasharray': [0, 2],
             }
         });
