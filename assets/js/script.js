@@ -118,6 +118,10 @@ jQuery(window).on('load', function() {
             [-6.835639, 33.998427]
         ],
     });
+ 
+    map.addControl(new mapboxgl.FullscreenControl());
+
+
 
     // Correcting for arabic text direction for street names
     mapboxgl.setRTLTextPlugin(
@@ -693,6 +697,56 @@ jQuery(window).on('load', function() {
                     minzoom: 15.5,
                 })
             })
+        
+                // tree
+            map.loadImage(
+                    './assets/img/icons/tree.png',
+                    (error, image) => {
+                        if (error) throw error;
+        
+                        map.addImage('tree' + iconCount, image);
+        
+                        map.addLayer({
+                            'id': 'tree' + iconCount,
+                            'type': 'symbol',
+                            'source': {
+                                'type': 'geojson',
+                                'data': pointsIAV
+                            },
+                            filter: ['==', 'name', 'tree'],
+                            'layout': {
+                                'visibility': 'visible',
+                                'icon-image': 'tree' + iconCount,
+                                'icon-size': 0.045
+                            },
+                            minzoom: 13.5,
+                        })
+                    })
+            
+                            // palmier
+            map.loadImage(
+                                './assets/img/icons/palmier.png',
+                                (error, image) => {
+                                    if (error) throw error;
+                    
+                                    map.addImage('palmier' + iconCount, image);
+                    
+                                    map.addLayer({
+                                        'id': 'palmier' + iconCount,
+                                        'type': 'symbol',
+                                        'source': {
+                                            'type': 'geojson',
+                                            'data': pointsIAV
+                                        },
+                                        filter: ['==', 'name', 'palmier'],
+                                        'layout': {
+                                            'visibility': 'visible',
+                                            'icon-image': 'palmier' + iconCount,
+                                            'icon-size': 0.04
+                                        },
+                                        minzoom: 13.5,
+                                    })
+                                })
 
         // Library
         map.loadImage(
@@ -1588,22 +1642,28 @@ jQuery(window).on('load', function() {
             'type': 'geojson',
             'data': './data/grass.geojson'
         })
-
+    
         // Roads
         map.addSource('roads', {
             'type': 'geojson',
             'data': './data/roads.geojson'
         })
-
+    
+        // terrain
+        map.addSource('terrain', {
+                    'type': 'geojson',
+                    'data': './data/terrain.geojson'
+        })
+    
         // 3D Buildings
         map.addSource('iav3D', {
             type: 'geojson',
             data: './data/iav3D.geojson'
         })
-
+    
         // Calling 2D Buildings
         getiav2D();
-
+    
         // Adding the grass layer
         map.addLayer({
             id: 'grass',
@@ -1613,8 +1673,20 @@ jQuery(window).on('load', function() {
                 'fill-color': '#A4E463',
                 'fill-opacity': 0.5,
             }
+    
         })
-
+    
+        // Adding the terrain layer
+        map.addLayer({
+            id: 'terrain',
+            type: 'fill',
+            source: 'terrain',
+            paint: {
+                'fill-color': '#c2b286',
+                'fill-opacity': 0.7,
+            }
+        })
+    
         // Adding the roads layer
         map.addLayer({
             id: 'roads',
@@ -1627,16 +1699,16 @@ jQuery(window).on('load', function() {
             paint: {
                 'line-color': ['get', 'color'],
                 'line-width': ['get', 'width'],
-                'line-blur': 3,
+                'line-blur': 0,
                 'line-dasharray': [0, 2],
             }
         });
-
+    
         // IAV 3D buildings
         if (pointOverlay) {
             getSearchedItem(pointOverlay);
         }
-
+    
         if (overlay == 'departments') {
             addCategoryOverlay(departmentsLink, 'departments', departmentsLinkState, 'marker', pin, markerSize, departmentsCount);
             if (departmentsCount == 0) {
@@ -1661,7 +1733,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'amphitheater') {
             addCategoryOverlay(amphitheaterLink, 'amphitheater', amphitheaterLinkState, 'marker', pin, markerSize, amphitheaterCount);
             if (amphitheaterCount == 0) {
@@ -1686,7 +1758,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'admin') {
             addCategoryOverlay(adminLink, 'admin', adminLinkState, 'marker', pin, markerSize, adminCount);
             // if (adminCount == 0) {
@@ -1711,7 +1783,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'service') {
             addCategoryOverlay(serviceLink, 'service', serviceLinkState, 'marker', pin, markerSize, serviceCount);
             if (serviceCount == 0) {
@@ -1736,7 +1808,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'cda') {
             addCategoryOverlay(cdaLink, 'cda', cdaLinkState, 'marker', pin, markerSize, cdaCount);
             // if (cdaCount == 0) {
@@ -1761,7 +1833,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'biblio') {
             addCategoryOverlay(biblioLink, 'biblio', biblioLinkState, 'marker', pin, markerSize, biblioCount);
             // if (biblioCount == 0) {
@@ -1786,7 +1858,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'study') {
             addCategoryOverlay(studyLink, 'study', studyLinkState, 'marker', pin, markerSize, studyCount);
             // if (studyCount == 0) {
@@ -1811,7 +1883,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'food') {
             addCategoryOverlay(foodLink, 'food', foodLinkState, 'marker', pin, markerSize, foodCount);
             if (foodCount == 0) {
@@ -1836,7 +1908,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'room') {
             addCategoryOverlay(roomLink, 'room', roomLinkState, 'marker', pin, markerSize, roomCount);
             if (roomCount == 0) {
@@ -1861,7 +1933,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'sport') {
             addCategoryOverlay(sportLink, 'sport', sportLinkState, 'marker', pin, markerSize, sportCount);
             if (sportCount == 0) {
@@ -1886,7 +1958,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'health') {
             addCategoryOverlay(healthLink, 'health', healthLinkState, 'marker', pin, markerSize, healthCount);
             if (healthCount == 0) {
@@ -1911,7 +1983,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'cap') {
             addCategoryOverlay(capLink, 'cap', capLinkState, 'marker', pin, markerSize, capCount);
             if (capCount == 0) {
@@ -1936,7 +2008,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'onssa') {
             addCategoryOverlay(onssaLink, 'onssa', onssaLinkState, 'marker', pin, markerSize, onssaCount);
             if (onssaCount == 0) {
@@ -1961,7 +2033,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'bde') {
             addCategoryOverlay(bdeLink, 'bde', bdeLinkState, 'marker', pin, markerSize, bdeCount);
             if (bdeCount == 0) {
@@ -1986,7 +2058,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'game') {
             addCategoryOverlay(gameLink, 'game', gameLinkState, 'marker', pin, markerSize, gameCount);
             if (gameCount == 0) {
@@ -2011,7 +2083,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'prayer') {
             addCategoryOverlay(prayerLink, 'prayer', prayerLinkState, 'marker', pin, markerSize, prayerCount);
             if (prayerCount == 0) {
@@ -2036,7 +2108,7 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
+    
         if (overlay == 'press') {
             addCategoryOverlay(pressLink, 'press', pressLinkState, 'marker', pin, markerSize, pressCount);
             if (pressCount == 0) {
@@ -2061,9 +2133,9 @@ jQuery(window).on('load', function() {
                 }
             }
         }
-
-
-
+    
+    
+    
     });
 
     // Search bar
