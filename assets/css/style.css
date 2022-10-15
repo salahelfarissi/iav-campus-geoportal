@@ -16,7 +16,7 @@
   background-color: #005C53;
   font-size: 12px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 #DDD {
@@ -32,7 +32,7 @@
   border: none;
   opacity: 0.85;
   font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .mapboxgl-popup-content {
-  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  font: 400 15px/22px "Source Sans Pro", "Helvetica Neue", Sans-serif;
   padding: 0;
   min-width: 150px;
   max-width: 150px;
@@ -98,8 +98,7 @@
 .easy-autocomplete input {
   border: none;
   border-radius: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   color: #184C78;
   float: none;
   background-color: #fff;
@@ -228,7 +227,6 @@ a img {
     margin-left: -35% !important;
   }
 }
-
 .leaf {
   background-image: url("../img/icons/radio_off.svg");
   background-size: 14px 14px;
@@ -241,7 +239,7 @@ a img {
 }
 
 .badge {
-  font-size: .55em !important;
+  font-size: 0.55em !important;
   vertical-align: 120% !important;
 }
 
@@ -266,4 +264,5 @@ a img {
   color: #03A696;
   text-decoration: none;
 }
-/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */
