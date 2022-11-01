@@ -41,6 +41,16 @@ function App() {
         );
 
         map.current.dragRotate.disable();
+
+        map.current.addControl(
+            new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true,
+                },
+                trackUserLocation: true,
+                showUserHeading: true,
+            })
+        );
     });
 
     useEffect(() => {

@@ -142,22 +142,11 @@ jQuery(window).on('load', function() {
         })
     );
 
-    // Square and Square-check
-    const square = 'https://cdn.jsdelivr.net/gh/salahelfarissi/interactive-iav-campus-map@master/assets/img/popup/inactive.png';
-    const squareCheck = 'https://cdn.jsdelivr.net/gh/salahelfarissi/interactive-iav-campus-map@master/assets/img/popup/active.png';
-
     // If changed, markers must change size too
     const markerSize = [1, 13, 0.1, 25, 1.5];
 
-    const lineSize = [1.5, 13, 2, 22, 18];
-    const pointSize = [1.5, 13, 2, 22, 60];
-    const iconSize = [1.5, 13, 0.25, 22, 1.7];
-
     // Like departments labels
     let headingLabel = [];
-
-    // Line background color
-    const activeLayerBackground = '#EEEEEE';
 
     // Default marker
     const pin = './assets/img/icons/dep-icon.png';
