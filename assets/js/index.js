@@ -24,7 +24,6 @@ jQuery(window).on('load', function() {
     const pointOverlay = getQueryStringValue('point').toString();
 
     // Adjusting element dimensions based on device
-    let device = null;
     let screenWidth = screen.width;
 
     // dimButtonGroup is the div containing the buttons (2D and 3D)
@@ -113,10 +112,7 @@ jQuery(window).on('load', function() {
         container: 'map',
         antialias: true,
         attributionControl: false,
-        maxBounds: [
-            [-6.889706, 33.954409],
-            [-6.835639, 33.998427]
-        ],
+        maxBounds: mapExtent,
     });
  
     map.addControl(new mapboxgl.FullscreenControl());
