@@ -170,9 +170,7 @@ jQuery(window).on('load', function() {
     // Administration
 
     let adminCount = 0;
-    // let adminList = [];
     let adminLink = document.getElementById('admin');
-    // let insertAdmin = document.getElementById('insertAdmin');
     headingLabel.push('admin');
 
     // Services
@@ -254,12 +252,6 @@ jQuery(window).on('load', function() {
     let pressLink = document.getElementById('press');
     let insertPress = document.getElementById('insertPress');
     headingLabel.push('press');
-
-    // Linear geometries
-    var linearCount = 0;
-    var linearLink = document.getElementById('Cheminements accessibles');
-    var linearColor = '#138fad';
-    var linearType = 'line';
 
     var listLayers = [departmentsLink, amphitheaterLink, adminLink, serviceLink, cdaLink, biblioLink, studyLink, foodLink, roomLink, sportLink, healthLink, capLink, onssaLink, bdeLink, gameLink, prayerLink, pressLink];
 
