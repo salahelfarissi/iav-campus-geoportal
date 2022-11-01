@@ -29,7 +29,18 @@ function App() {
             attributionControl: false,
             maxBounds: mapBounds,
         });
+
+        // Add full screen control
         map.current.addControl(new mapboxgl.FullscreenControl());
+
+        // Support for RTL languages
+        mapboxgl.setRTLTextPlugin(
+            'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+            null,
+            true
+        );
+
+        map.current.dragRotate.disable();
     });
 
     useEffect(() => {
