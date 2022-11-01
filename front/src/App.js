@@ -8,17 +8,25 @@ mapboxgl.accessToken =
 function App() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9);
+  const [lng, setLng] = useState(-6.8665775);
+  const [lat, setLat] = useState(33.9769235);
+  const [zoom, setZoom] = useState(15.5);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/salahelfarissi/ckzzjh6kl000k14mf1l6b88wk",
       center: [lng, lat],
       zoom: zoom,
+      pitch: 0,
+      bearing: 128,
+      antialias: true,
+      attributionControl: false,
+      maxBounds: [
+        [-6.889706, 33.954409],
+        [-6.835639, 33.998427]
+    ],
     });
   });
 
