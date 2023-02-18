@@ -23,4 +23,6 @@ The geoportal relies on the [Leaflet](https://leafletjs.com/) library to display
 
 The map in its 2D and 2.5D view is interactive and allows the user to zoom in and out, pan, and move to specific locations. The user can hover over the buildings to display the name of the building with its corresponding image.
 
-There is also a menu to select different buildings categories. The user can also search for a specific building using the search bar. The search bar is powered by the [EasyAutocomplete](http://easyautocomplete.com/) plugin.
+There is also a menu to select different buildings categories. The menu is powered by the [metisMenu](https://onokumus.github.io/metismenu/) plugin.
+
+The user can also search for a specific building using the search bar. The search bar is powered by the [EasyAutocomplete](http://easyautocomplete.com/) plugin.
