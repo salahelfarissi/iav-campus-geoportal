@@ -1,306 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IAV Campus Geoportal</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAV Campus Geoportal</title>
+        <!-- MapBox -->
+        <link
+            href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+            rel="stylesheet"
+        />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
 
-    <!-- MapBox -->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+        <!-- Favicon -->
+        <link href="./assets/img/favicons/favicon.ico" rel="icon" />
 
-    <!-- Favicon -->
-    <link href="./assets/img/favicons/favicon.ico" rel="icon">
+        <!-- jQuery -->
+        <script
+            crossorigin="anonymous"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        ></script>
 
-    <!-- jQuery -->
-    <script crossorigin="anonymous"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Main script -->
+        <script defer src="./assets/js/index.js"></script>
 
-    <!-- Main script -->
-    <script defer src="./assets/js/index.js"></script>
+        <!-- Search Plugin JS file -->
+        <script src="./assets/js/jquery.easy-autocomplete.min.js"></script>
 
-    <!-- Search Plugin JS file -->
-    <script src="./assets/js/jquery.easy-autocomplete.min.js"></script>
+        <!-- Search Plugin CSS file -->
+        <link
+            href="./assets/css/easy/easy-autocomplete.min.css"
+            rel="stylesheet"
+        />
 
-    <!-- Search Plugin CSS file -->
-    <link href="./assets/css/easy/easy-autocomplete.min.css" rel="stylesheet">
+        <!-- Search Plugin Additional CSS Themes file - not required -->
+        <link
+            href="./assets/css/easy/easy-autocomplete.themes.min.css"
+            rel="stylesheet"
+        />
 
-    <!-- Search Plugin Additional CSS Themes file - not required -->
-    <link href="./assets/css/easy/easy-autocomplete.themes.min.css" rel="stylesheet">
+        <!-- Bootstrap CSS File -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        />
 
-    <!-- Bootstrap CSS File -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- Bootstrap JS File -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+            integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+            crossorigin="anonymous"
+        ></script>
 
-    <!-- Bootstrap JS File -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"></script>
+        <!-- Font-awaesome Kit -->
+        <script
+            crossorigin="anonymous"
+            src="https://kit.fontawesome.com/342a65accd.js"
+        ></script>
 
-    <!-- Font-awaesome Kit -->
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/342a65accd.js"></script>
+        <link rel="stylesheet" href="./assets/css/mm-vertical.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <link rel="stylesheet" href="./assets/css/mm-vertical.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- metisMenu CSS -->
+        <link rel="stylesheet" href="./assets/css/metisMenu.min.css" />
 
-    <!-- metisMenu CSS -->
-    <link rel="stylesheet" href="./assets/css/metisMenu.min.css">
+        <!-- metisMenu JS -->
+        <script src="./assets/js/metisMenu.min.js"></script>
 
-    <!-- metisMenu JS -->
-    <script src="./assets/js/metisMenu.min.js"></script>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
-</head>
+    <body>
+        <div class="loader">
+            <img
+                id="loader-img"
+                src="./assets/img/ajax-loader.gif"
+                alt="ajax-loader"
+            />
+        </div>
 
-<body>
-
-
-    <div class="loader">
-        <img id="loader-img" src='./assets/css/ajax-loader.gif' alt="ajax-loader">
-    </div>
-
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="./assets/img/favicons/android-chrome-512x512.png"
-                        alt="Title">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/salahelfarissi/iav-campus-geoportal/"
-                                target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </li>
-                    </ul>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"
+                        ><img
+                            src="./assets/img/favicons/android-chrome-512x512.png"
+                            alt="Title"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="https://github.com/salahelfarissi/iav-campus-geoportal/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >GitHub</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-3 mb-2 mt-2">
-                <nav class="sidebar-nav navbar-collapse">
-                    <ul id="metismenu">
-
-                        <li class="sidebar-search">
-                            <div class="input-group mb-1">
-                                <input id="searchBuild" type="text" class="form-control" placeholder="Search...">
-                                <div class="input-group-append">
-
-                                    <button class="btn btn-primary" id="searchButton" type="button" title="Search">
-                                    </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-2 mt-2">
+                    <nav class="sidebar-nav navbar-collapse">
+                        <ul id="metismenu">
+                            <li class="sidebar-search">
+                                <div class="input-group mb-1">
+                                    <input
+                                        id="searchBuild"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Search..."
+                                    />
+                                    <div class="input-group-append">
+                                        <button
+                                            class="btn btn-primary"
+                                            id="searchButton"
+                                            type="button"
+                                            title="Search"
+                                        ></button>
+                                    </div>
                                 </div>
+                            </li>
 
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Formations ⁄ Amphithéâtres<i
+                                        class="fa-solid fa-building"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a
+                                            id="departments"
+                                            class="square"
+                                            href="#"
+                                            >Formations</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertDepartment"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a
+                                            id="amphitheater"
+                                            class="square"
+                                            href="#"
+                                            >Amphithéatres</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertAmphitheater"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Administration ⁄ Services<i
+                                        class="fa-solid fa-handshake"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a id="admin" class="square" href="#"
+                                            >Administration</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertAdmin"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="service" class="square" href="#"
+                                            >Services</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertService"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Bibliothèques ⁄ Culture<i
+                                        class="fa-solid fa-book-open-reader"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a id="cda" class="square" href="#"
+                                            >Centre de documentation agricole</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertCda"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="biblio" class="square" href="#"
+                                            >Bibliothèque Topo</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertBiblio"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="study" class="square" href="#"
+                                            >Salle d'étude</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertStudy"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Restaurants ⁄ Buvettes ⁄ Résidence<i
+                                        class="fa-solid fa-utensils"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a id="food" class="square" href="#"
+                                            >Restaurants & Buvettes</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertFood"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="room" class="square" href="#"
+                                            >Résidence Etudiants</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertRoom"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Equipements sportifs ⁄ Santé<i
+                                        class="fa-solid fa-futbol"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a id="sport" class="square" href="#"
+                                            >Equipements sportifs</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertSport"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="health" class="square" href="#"
+                                            >Santé</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertHealth"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Structures ⁄ Vie associative<i
+                                        class="fa-solid fa-school"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a id="cap" class="square" href="#"
+                                            >Capacity Building Center</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertCap"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="onssa" class="square" href="#"
+                                            >ONSSA</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertOnssa"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="bde" class="square" href="#"
+                                            >Salle BDE</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertBde"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="has-arrow"
+                                    href="#"
+                                    aria-expanded="false"
+                                    >Divers<i
+                                        class="fa-solid fa-basket-shopping"
+                                    ></i
+                                ></a>
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a id="game" class="square" href="#"
+                                            >Jeux et Salle de sport</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertGame"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="prayer" class="square" href="#"
+                                            >Mosquée</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertPrayer"
+                                        ></ul>
+                                    </li>
+                                    <li>
+                                        <a id="press" class="square" href="#"
+                                            >Foyer et Epicerie</a
+                                        >
+                                        <ul
+                                            class="nav-third-level"
+                                            id="insertPress"
+                                        ></ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-remove-filters">
+                                <button
+                                    id="btnRemovefilters"
+                                    type="button"
+                                    class="btn btn-primary btn-sm"
+                                >
+                                    Réinitialiser les filtres
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div
+                        id="carouselExampleCaptions"
+                        class="carousel slide"
+                        data-bs-ride="carousel"
+                    >
+                        <div class="carousel-indicators">
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="2"
+                                aria-label="Slide 3"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="3"
+                                aria-label="Slide 4"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExampleCaptions"
+                                data-bs-slide-to="4"
+                                aria-label="Slide 5"
+                            ></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img
+                                    src="./assets/img/popup/iav.png"
+                                    class="d-block w-100"
+                                    alt="..."
+                                />
                             </div>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Formations ⁄ Amphithéâtres<i
-                                    class="fa-solid fa-building"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="departments" class="square" href="#">Formations</a>
-                                    <ul class="nav-third-level" id="insertDepartment"></ul>
-                                </li>
-                                <li>
-                                    <a id="amphitheater" class="square" href="#">Amphithéatres</a>
-                                    <ul class="nav-third-level" id="insertAmphitheater"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Administration ⁄ Services<i
-                                    class="fa-solid fa-handshake"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="admin" class="square" href="#">Administration</a>
-                                    <ul class="nav-third-level" id="insertAdmin"></ul>
-                                </li>
-                                <li>
-                                    <a id="service" class="square" href="#">Services</a>
-                                    <ul class="nav-third-level" id="insertService"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Bibliothèques ⁄ Culture<i
-                                    class="fa-solid fa-book-open-reader"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="cda" class="square" href="#">Centre de documentation agricole</a>
-                                    <ul class="nav-third-level" id="insertCda"></ul>
-                                </li>
-                                <li>
-                                    <a id="biblio" class="square" href="#">Bibliothèque Topo</a>
-                                    <ul class="nav-third-level" id="insertBiblio"></ul>
-                                </li>
-                                <li>
-                                    <a id="study" class="square" href="#">Salle d'étude</a>
-                                    <ul class="nav-third-level" id="insertStudy"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Restaurants ⁄ Buvettes ⁄ Résidence<i
-                                    class="fa-solid fa-utensils"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="food" class="square" href="#">Restaurants & Buvettes</a>
-                                    <ul class="nav-third-level" id="insertFood"></ul>
-                                </li>
-                                <li>
-                                    <a id="room" class="square" href="#">Résidence Etudiants</a>
-                                    <ul class="nav-third-level" id="insertRoom"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Equipements sportifs ⁄ Santé<i
-                                    class="fa-solid fa-futbol"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="sport" class="square" href="#">Equipements sportifs</a>
-                                    <ul class="nav-third-level" id="insertSport"></ul>
-                                </li>
-                                <li>
-                                    <a id="health" class="square" href="#">Santé</a>
-                                    <ul class="nav-third-level" id="insertHealth"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Structures ⁄ Vie associative<i
-                                    class="fa-solid fa-school"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="cap" class="square" href="#">Capacity Building Center</a>
-                                    <ul class="nav-third-level" id="insertCap"></ul>
-                                </li>
-                                <li>
-                                    <a id="onssa" class="square" href="#">ONSSA</a>
-                                    <ul class="nav-third-level" id="insertOnssa"></ul>
-                                </li>
-                                <li>
-                                    <a id="bde" class="square" href="#">Salle BDE</a>
-                                    <ul class="nav-third-level" id="insertBde"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a class="has-arrow" href="#" aria-expanded="false">Divers<i
-                                    class="fa-solid fa-basket-shopping"></i></a>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a id="game" class="square" href="#">Jeux et Salle de sport</a>
-                                    <ul class="nav-third-level" id="insertGame"></ul>
-                                </li>
-                                <li>
-                                    <a id="prayer" class="square" href="#">Mosquée</a>
-                                    <ul class="nav-third-level" id="insertPrayer"></ul>
-                                </li>
-                                <li>
-                                    <a id="press" class="square" href="#">Foyer et Epicerie</a>
-                                    <ul class="nav-third-level" id="insertPress"></ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-remove-filters">
-                            <button id="btnRemovefilters" type="button" class="btn btn-primary btn-sm">Réinitialiser les
-                                filtres</button>
-                        </li>
-                    </ul>
-                </nav>
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                            aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-                            aria-label="Slide 5"></button>
+                            <div class="carousel-item">
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/dep_topo.png"
+                                    class="d-block w-100"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/apesa.png"
+                                    class="d-block w-100"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/clinique_equine.png"
+                                    class="d-block w-100"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/stage.png"
+                                    class="d-block w-100"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="assets\img\popup\carousel.jpeg"
+                                    class="d-block w-100"
+                                    alt="..."
+                                />
+                            </div>
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next"
+                        >
+                            <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./assets/img/popup/iav.png" class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/dep_topo.png"
-                                class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/apesa.png"
-                                class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/clinique_equine.png"
-                                class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://cdn.jsdelivr.net/gh/salahelfarissi/iav-campus-geoportal@main/assets/img/popup/stage.png"
-                                class="d-block w-100" alt="...">
-
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets\img\popup\carousel.jpeg" class="d-block w-100" alt="...">
-
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
-
-
-            </div>
-            <div class="col" id="map">
-                <div class="btn-group btn-group-sm" id="DDD"></div>
-                <div class="btn-group btn-group-sm" id="switchView">
-                    <button class="btn btn-primary btn-sm" id="iav">IAV</button>
-                    <button class="btn btn-primary btn-sm" id="clinic">Clinique</button>
-                    <button class="btn btn-primary btn-sm" id="apesa">APESA</button>
+                <div class="col" id="map">
+                    <div class="btn-group btn-group-sm" id="DDD"></div>
+                    <div class="btn-group btn-group-sm" id="switchView">
+                        <button class="btn btn-primary btn-sm" id="iav">
+                            IAV
+                        </button>
+                        <button class="btn btn-primary btn-sm" id="clinic">
+                            Clinique
+                        </button>
+                        <button class="btn btn-primary btn-sm" id="apesa">
+                            APESA
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
