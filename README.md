@@ -15,6 +15,10 @@ O —— Geo —— O
   </tbody>
 </table>
 
+<p align='center'>
+    <img src='https://github.com/salahelfarissi/iav-campus-geoportal/blob/dev/assets/img/video.gif' height='300'>
+</p>
+
 IAV Campus Geoportal is a *jQuery* web mapping application that allows you to navigate through a map and display information about the different buildings of the IAV Campus. Read more about the project [here](https://www.salahelfarissi.me/posts/geoportal). Visit the live demo [here](https://salahelfarissi.github.io/iav-campus-geoportal/).
 
 ## Description
